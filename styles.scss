@@ -79,7 +79,7 @@ body {
     padding: 2px;
     font-size: 4px;
     line-height: 12px;
-    vertical-align: middle;
+    //vertical-align: middle;
     background-color: rgba($accent-color, 1);
     color: $primary-color;
     border: .1em dashed $accent-color;
@@ -92,11 +92,10 @@ body {
 }
 
 .custom-cursor.hovered {
-    transform: translate(-50%, -50%) scale(5);
+    transform: translate(-50%, -50%) scale(3);
     color: $accent-color;
     background-color: rgba($primary-color, 0.5);
     backdrop-filter: blur(3px);
-    //animation: to-top-rotate 10s linear infinite;
 }
 
 h1, h2, h3 {
@@ -401,10 +400,6 @@ footer {
             width: 2em;
             height: 2em;
             border-radius: 5em;
-            
-            & a:hover {
-                cursor: pointer;
-            }
  
             & #email {
                 background-color: $accent-color;

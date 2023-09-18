@@ -142,19 +142,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let cursorX = 0;
     let cursorY = 0;
 
+    let cursorScaleFactor = 1;
+
     function updateCursorContent(content) {
         customCursor.textContent = content;
     }
 
     function updateCursorPosition() {
-        customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        customCursor.style.transform = `translate(calc(${cursorX}px - 8px), calc(${cursorY}px - 8px)) scale(${cursorScaleFactor})`;
     }
      
     document.addEventListener('mousemove', (e) => {
-        /*
-        customCursor.style.left = e.clientX +'px';
-        customCursor.style.top = e.clientY + 'px';
-        */
        cursorX = e.clientX;
        cursorY = e.clientY;
        requestAnimationFrame(updateCursorPosition);
@@ -163,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cursorElements.forEach((element) => {
         element.addEventListener('mouseenter', () => {
             customCursor.classList.add('hovered');
+            cursorScaleFactor = 5;
             if (element.classList.contains('case-study-card')) {
                 updateCursorContent('View');
             }
@@ -175,10 +174,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCursorContent('Read');
             }
         });
+
         element.addEventListener('mouseleave', () => {
             customCursor.classList.remove('hovered');
+            cursorScaleFactor = 1;
             updateCursorContent('');
         })
+
     });
 
 
