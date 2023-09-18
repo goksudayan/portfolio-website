@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // For secondary case study cards, get img height: 
     
     const tidbitsImg = document.getElementById('tidbits-img');
-    let tidbitsImgHeight = 0;
-
     tidbitsImg.addEventListener('load', () => {
-        tidbitsImgHeight = tidbitsImg.scrollHeight;
+        const tidbitsImgHeight = tidbitsImg.scrollHeight;
         console.log(tidbitsImgHeight);
         
     
@@ -19,15 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(tidbitsStyle);
     });
 
-
-
-
-    // Navigation hover interaction and hide/show when scrolled
+    // Navigation hide/show
 
     let lastScrollPosition = 0;
 
+    const navbar = document.getElementById('navbar');
+
     window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
         const scrollY = window.scrollY;
         const scrollThreshold = 100;
 
@@ -41,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollPosition = scrollY;
     });
 
-    // Hover interactions
+    // Navigation hover interactions
 
     const accentColor = '#f2a60d';
     const primaryColor = '#e6e6e6'; 
@@ -59,11 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
         this.style.transform = 'none';
        });
 
-
     });
 
+    const brandName = document.getElementById('brand-name');
 
-    
+    brandName.addEventListener('mouseenter', () => {
+        brandName.style.letterSpacing = "0.2em";
+    });
+
+    brandName.addEventListener('mouseleave', () => {
+        brandName.style.letterSpacing = "0.025em";
+        brandName.style.transform = 'none';
+    })
+
     // Background
 
     const hero = document.getElementById('hero-section');
