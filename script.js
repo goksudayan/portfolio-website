@@ -5,17 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const tidbitsImg = document.getElementById('tidbits-img');
     tidbitsImg.addEventListener('load', () => {
         const tidbitsImgHeight = tidbitsImg.scrollHeight;
-        console.log(tidbitsImgHeight);
         
-    
-    const tidbitsStyle = document.createElement('style');
-    tidbitsStyle.textContent = `
-        #tidbits:hover img {
-            transform: translateY(calc(-${tidbitsImgHeight}px + 40vh));
-        }
-    `;
-    document.head.appendChild(tidbitsStyle);
+        const tidbitsStyle = document.createElement('style');
+        tidbitsStyle.textContent = `
+            #tidbits:hover img {
+                transform: translateY(calc(-${tidbitsImgHeight}px + 50vh));
+            }
+        `;
+        document.head.appendChild(tidbitsStyle);
     });
+
+    const sismoImg = document.getElementById('sismo-img');
+    sismoImg.addEventListener('load', () => {
+        const sismoImgHeight = sismoImg.scrollHeight;
+    
+        const sismoStyle = document.createElement('style');
+        sismoStyle.textContent = `
+            #sismo:hover img {
+                transform: translateY(calc(-${sismoImgHeight}px + 50vh));
+            }
+        `;
+        document.head.appendChild(sismoStyle);
+    });
+
 
     // Navigation hide/show
 
@@ -71,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Background
 
     const hero = document.getElementById('hero-section');
-    const katch = document.getElementById('katch');
-    const sismo = document.getElementById('sismo');
-    const tomo = document.getElementById('tomo');
-    const focusmate = document.getElementById('focusmate');
-    const tidbits = document.getElementById('tidbits');
-
-    const sections = [hero, katch, sismo, tomo, focusmate, tidbits];
+    const work = document.getElementById('work');
+    const process = document.getElementById('process');
+    const about = document.getElementById('about');
+    const blog = document.getElementById('blog');
+    const contact = document.getElementById('contact');
+   
+    const sections = [hero, work, process, about, blog, contact];
 
     const triangle = '0,60 0,60 0,60 0,60 30,0 30,0 30,0 30,0 30,0 60,60 60,60 60,60 60,60'; // Hero section - 4
     const square = '0,0 0,0 0,0 0,0 0,60 0,60 0,60 0,60 60,60 60,60 60,60 60,60'; // Katch - 4
@@ -131,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((div) => {
         observer.observe(div);
     });
-
+    
     // Custom cursor
 
     const cursorElements = document.querySelectorAll('.with-cursor');
@@ -162,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('mouseenter', () => {
             customCursor.classList.add('hovered');
             cursorScaleFactor = 5;
-            if (element.classList.contains('case-study-card')) {
+            if (element.classList.contains('case-study-card') || element.classList.contains('archived-study')) {
                 updateCursorContent('View');
             }
             /*
@@ -182,6 +194,5 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     });
-
 
 });
