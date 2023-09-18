@@ -139,13 +139,25 @@ document.addEventListener('DOMContentLoaded', () => {
     customCursor.classList.add('custom-cursor');
     document.body.appendChild(customCursor);
 
+    let cursorX = 0;
+    let cursorY = 0;
+
     function updateCursorContent(content) {
         customCursor.textContent = content;
     }
 
+    function updateCursorPosition() {
+        customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+    }
+     
     document.addEventListener('mousemove', (e) => {
+        /*
         customCursor.style.left = e.clientX +'px';
         customCursor.style.top = e.clientY + 'px';
+        */
+       cursorX = e.clientX;
+       cursorY = e.clientY;
+       requestAnimationFrame(updateCursorPosition);
     });
 
     cursorElements.forEach((element) => {
