@@ -131,4 +131,43 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((div) => {
         observer.observe(div);
     });
+
+    // Custom cursor
+
+    const cursorElements = document.querySelectorAll('.with-cursor');
+    const customCursor = document.createElement('div');
+    customCursor.classList.add('custom-cursor');
+    document.body.appendChild(customCursor);
+
+    function updateCursorContent(content) {
+        customCursor.textContent = content;
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        customCursor.style.left = e.clientX +'px';
+        customCursor.style.top = e.clientY + 'px';
+    });
+
+    cursorElements.forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+            customCursor.classList.add('hovered');
+            if (element.classList.contains('case-study-card')) {
+                updateCursorContent('View');
+            }
+            /*
+            else if (element.classList.contains('nav-item') && !navbar.classList.contains('hidden')) {
+                updateCursorContent('Go');
+            }
+            */
+            else if (element.classList.contains('blog-post')) {
+                updateCursorContent('Read');
+            }
+        });
+        element.addEventListener('mouseleave', () => {
+            customCursor.classList.remove('hovered');
+            updateCursorContent('');
+        })
+    });
+
+
 });
