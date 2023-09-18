@@ -1,23 +1,16 @@
 @use 'sass:color';
 
-$primary-color: rgba(26, 26, 26, 1);
-$black-1000: $primary-color;
-$black-900: color.scale($primary-color, $lightness: 10%);
-$black-800: color.scale($primary-color, $lightness: 20%);
-$black-700: color.scale($primary-color, $lightness: 30%);
-$black-600: color.scale($primary-color, $lightness: 40%);
-$black-500: color.scale($primary-color, $lightness: 50%);
-$black-400: color.scale($primary-color, $lightness: 60%);
-$black-300: color.scale($primary-color, $lightness: 70%);
-$black-200: color.scale($primary-color, $lightness: 80%);
-$black-100: color.scale($primary-color, $lightness: 90%);
-$black-0: rgba(230, 230, 230, 1);
-$secondary-color: $black-0;
+$black: rgba(26, 26, 26, 1);
+$dark-gray: color.scale($black, $lightness: 20%);
+$mid-gray: color.scale($black, $lightness: 50%);
+$light-gray: color.scale($black, $lightness: 80%);
+$white: rgba(230, 230, 230, 1);
+$orange: rgba(242, 166, 13, 1);
 
 $desktop-padding: 5vw;
-
-$accent-color: rgba(242, 166, 13, 1);
-$accent-color-shadow: rgba(86, 148, 255, 0.5);
+$typo-scale: 1.5;
+$font-stack: "myriad-pro", sans-serif;
+$base-font-size: 24px;
 
 $katch-color: rgba(58, 104, 143, 1);
 $katch-color-shadow: rgba(58, 104, 143, 0.5);
@@ -30,32 +23,32 @@ $focusmate-color-shadow: rgba(60, 64, 135, 0.5);
 $tidbits-color: #D6C9B9;
 $tidbits-color-shadow: rgba(214, 201, 185, 0.5);
 
-$font-stack: "myriad-pro", sans-serif;
+
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: $font-stack;
-    font-size: 24px;
+    font-size: $base-font-size;
     line-height: 135%;
     text-decoration: none;
     cursor: none;
 }
 
-::selection{
-    background-color: $accent-color;
-    color: $primary-color;
+::selection {
+    background-color: $orange;
+    color: $black;
 }
 
 ::-moz-selection{
-    background-color: $accent-color;
-    color: $primary-color;
+    background-color: $orange;
+    color: $black;
 }
 
 ::-webkit-selection{
-    background-color: $accent-color;
-    color: $primary-color;
+    background-color: $orange;
+    color: $black;
 }
 
 html {
@@ -63,8 +56,8 @@ html {
 }
 
 body {
-    background-color: $primary-color;
-    color: $secondary-color;
+    background-color: $black;
+    color: $white;
     display: grid;
     width: 100vw;
     overflow-x: hidden;
@@ -80,9 +73,9 @@ body {
     font-size: 4px;
     line-height: 12px;
     //vertical-align: middle;
-    background-color: rgba($accent-color, 1);
-    color: $primary-color;
-    border: .1em dashed $accent-color;
+    background-color: rgba($orange, 1);
+    color: $black;
+    border: .1em dashed $orange;
     text-align: center;
     border-radius: 50%;
     pointer-events: none;
@@ -93,9 +86,32 @@ body {
 
 .custom-cursor.hovered {
     transform: translate(-50%, -50%) scale(3);
-    color: $accent-color;
-    background-color: rgba($primary-color, 0.5);
+    color: $orange;
+    background-color: rgba($black, 0.5);
     backdrop-filter: blur(3px);
+}
+
+h1 {
+    color: $white;
+    font-size: calc($base-font-size*$typo-scale*$typo-scale*$typo-scale);
+}
+
+.details h1 {
+    color: $white;
+}
+
+h2 {    
+    font-size: calc($base-font-size*$typo-scale*$typo-scale);
+}
+
+h3 {
+    color: $white;
+    font-weight: 500;
+    font-size: calc($base-font-size*$typo-scale);
+}
+
+.header > h3 {
+    color: $mid-gray;
 }
 
 h1, h2, h3 {
@@ -103,36 +119,31 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
 }
 
-h1, h2, h3, p{
+h1, h2, h3, p {
     opacity: 0;
     animation-name: into-view;
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     animation-delay: .5s;
+    margin: 0;
 }
 
-h1 {
-    font-size: 5em;
-    //text-transform: uppercase;
+h2, h3, p {
+    color: $mid-gray;
 }
 
-h2 {    
-    font-size: 3em;
-}
-
-h3 {
-    color: $black-700;
-    font-weight: 600;
-    font-size: 1.25em;
-}
-
-a {
-    cursor: none;
+.archived-card > h3 {
+    color: $white;
 }
 
 p {
     font-weight: 500;
+    line-height: 150%;
+}
+
+a {
+    cursor: none;
 }
 
 #katch {
@@ -182,14 +193,14 @@ p {
         font-size: 5rem;
         font-style: italic;
         font-family: "Cormorant", serif;
-        color: $accent-color;
+        color: $orange;
     }
 }
 
 
 
 nav a, footer a {
-    color: $secondary-color;
+    color: $mid-gray;
     text-decoration: none;
 }
 
@@ -200,10 +211,10 @@ ul {
 #navbar {
     display: flex;
     position: fixed;
-    background: hsla(0, 0%, 10%, .4) center/cover;
+    background: rgba($black, 0.75) center/cover;
     //backdrop-filter: blur(3px);
     cursor: none;
-    border: 0px $black-900 solid;
+    border: 0px $dark-gray solid;
     border-radius: 1.5rem;
     top: 1.5%;
     left: 1.5%;
@@ -220,15 +231,15 @@ ul {
         gap: 0.25em;
         .nav-item, #brand-name {
             padding: 0;
-            font-size: 0.75em;
+            font-size: calc($base-font-size/$typo-scale);
             letter-spacing: 0.02em;
             transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
         }
         .nav-item {
-            color: $secondary-color;
+            color: $white;
         }
         #brand-name {
-            color: $accent-color;
+            color: $orange;
         }
 
     }
@@ -239,7 +250,7 @@ ul {
     width: 5em;
     height: 5em;
     border-radius: 50%;
-    background-color: $accent-color;
+    background-color: $orange;
 }
 
 
@@ -250,7 +261,7 @@ ul {
 
 .section-divider {
     width: 100%;
-    background-color: $black-800;
+    background-color: $dark-gray;
     height: 1px;
     z-index: 0;
 }
@@ -283,7 +294,7 @@ main {
 }
 
 #case-studies {
-    background: hsla(0, 0%, 10%, 0) center/cover;
+    background: rgba($black, 0) center/cover;
     backdrop-filter: blur(3px);
     padding-top: calc($desktop-padding/2);
 }
@@ -349,7 +360,7 @@ main {
 
 a {
     cursor: none;
-    color: $secondary-color;
+    color: $white;
 }
 
 #blog {
@@ -372,9 +383,9 @@ footer {
             border-radius: 5em;
  
             & #email {
-                background-color: $accent-color;
+                background-color: $orange;
                 i {
-                    color: $primary-color;
+                    color: $black;
                     border: none;
                 }
             }
@@ -385,7 +396,7 @@ footer {
                 }
             }
             &#medium {
-                background-color: $black-700;
+                background-color: $dark-gray;
                 i {
                     border: none;
                 }
@@ -399,7 +410,7 @@ footer {
     width: 70%;
     height: 100vh;
     top: 0; right: 0; bottom: 0; left: 30%;
-    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(26, 26, 26, 0));
+    background: linear-gradient(to right, rgba($black, 1), rgba($black, 0));
     z-index: 0;
 }
 
@@ -438,12 +449,12 @@ footer {
 }
 
 #to-top {
-    background-color: $primary-color;
-    color: $primary-color;
+    background-color: $black;
+    color: $black;
     position: fixed;
     display: grid;
     justify-content: center;
-    border: .1em dashed $accent-color;
+    border: .1em dashed $orange;
     border-radius: 5em;
     padding: 0.5em;
     width: 2em;
@@ -457,7 +468,7 @@ footer {
         vertical-align: middle;
         width: 100%;
         height: auto;
-        fill: $accent-color;
+        fill: $orange;
         animation: to-top-rotate-in 10s linear infinite;
     }
 }
@@ -467,6 +478,7 @@ footer {
     //border-radius: 1em;
     //background: hsla(0, 0%, 0%, 0) center/cover;
     //backdrop-filter: blur(3px);
+    
 }
 
 #sismo, #tomo, #focusmate, #tidbits {
@@ -476,23 +488,33 @@ footer {
     overflow: hidden;
     img {
         width: 100%;
-        //height: 100%;
         object-fit: contain;
-        //overflow: hidden;
-        //filter: saturate(25%);
-        transition: filter .5s linear, transform 5s linear;
+        overflow: hidden;
+        //transition: transform 5s linear;
     }
     &:hover {
         img {
-            //filter: saturate(100%);
-            transform: translateY(-100%);
+            transform: scale(1.1);
         }
     }
 }
 
-#tomo {
+#sismo, #tomo, #focusmate {
+    img {
+        transition: transform 1s linear;
+    }
+}
+
+#tidbits {
+    img {
+        transition: transform 5s linear;
+    }
+}
+
+ #tomo {
     img {
         transition: transform .5s linear;
+        transform: scale(1.1);
     }
     &:hover {
         img {
@@ -574,7 +596,7 @@ footer {
 
 @media(max-width: 700px) {
     * {
-        font-size: 16px;
+        $base-font-size: 16px;
         margin: 1.5% 2.5%;
     }
 

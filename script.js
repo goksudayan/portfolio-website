@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigation hover interactions
 
-    const accentColor = '#f2a60d';
-    const primaryColor = '#e6e6e6'; 
+    const accentColor = '#e6e6e6';
+    const primaryColor = '#8d8d8d'; 
     const navItems = document.querySelectorAll('.nav-item');
 
     navItems.forEach(function(navItem) {
