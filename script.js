@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(sismoStyle);
     });
 
-
     // Navigation hide/show
 
     let lastScrollPosition = 0;
@@ -89,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const blog = document.getElementById('blog');
     const contact = document.getElementById('contact');
    
-    const sections = [hero, work, process, about, blog, contact];
+    const sections = [hero, process, about, blog, contact];
 
     const triangle = '0,60 0,60 0,60 0,60 30,0 30,0 30,0 30,0 30,0 60,60 60,60 60,60 60,60'; // Hero section - 4
     const square = '0,0 0,0 0,0 0,0 0,60 0,60 0,60 0,60 60,60 60,60 60,60 60,60'; // Katch - 4
@@ -194,5 +193,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     });
+
+    // to-top container hidden/visible
+
+    const toTopContainer = document.getElementById('to-top-container');
+
+    function toggleToTopVisibility() {
+        const scrollY = window.scrollY;
+        const scrollThreshold = 140;
+
+        if (scrollY >= scrollThreshold) {
+          toTopContainer.style.display = 'block';
+        } else {
+          toTopContainer.style.display = 'none';
+        }
+      }
+    
+      toggleToTopVisibility();
+    
+      window.addEventListener('scroll', toggleToTopVisibility);
 
 });

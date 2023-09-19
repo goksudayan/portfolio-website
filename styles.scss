@@ -138,6 +138,7 @@ h2, h3, p {
 }
 
 p {
+    position: relative;
     font-weight: 500;
     line-height: 150%;
 }
@@ -183,9 +184,9 @@ a {
 }
 
 
-#hero {
+#hero-headline {
     font-family: "Cormorant", serif;
-    margin-bottom: .75em;
+    margin-bottom: .5em;
     //font-weight: bold;
     line-height: 20%;
     font-size:5rem;
@@ -237,12 +238,19 @@ ul {
         }
         .nav-item {
             color: $white;
+            &.active {
+                color: red;
+            }
         }
         #brand-name {
             color: $orange;
         }
 
     }
+
+}
+
+.div-with-emp {
 
 }
 
@@ -266,7 +274,7 @@ ul {
     z-index: 0;
 }
 
-.hero {
+#hero-section {
     padding-left: 5%;
     min-height: 100vh;
     max-height: 100vh;
@@ -287,6 +295,8 @@ section, .section {
 main {
     padding: 0;
     gap: 0;
+    background: rgba($black, 0) center/cover;
+    backdrop-filter: blur(3px);
     .header {
         padding: $desktop-padding;
         padding-bottom: calc($desktop-padding/2);
