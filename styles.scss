@@ -1,9 +1,9 @@
 @use 'sass:color';
 
 $black: rgba(26, 26, 26, 1);
-$dark-gray: color.scale($black, $lightness: 20%);
+$dark-gray: color.scale($black, $lightness: 5%);
 $mid-gray: color.scale($black, $lightness: 50%);
-$light-gray: color.scale($black, $lightness: 80%);
+$light-gray: color.scale($black, $lightness: 90%);
 $white: rgba(230, 230, 230, 1);
 $orange: rgba(242, 166, 13, 1);
 
@@ -22,6 +22,7 @@ $focusmate-color: #3C4087;
 $focusmate-color-shadow: rgba(60, 64, 135, 0.5);
 $tidbits-color: #D6C9B9;
 $tidbits-color-shadow: rgba(214, 201, 185, 0.5);
+$vidbib-color: #6E6BFF;
 
 
 
@@ -33,7 +34,7 @@ $tidbits-color-shadow: rgba(214, 201, 185, 0.5);
     font-size: $base-font-size;
     line-height: 135%;
     text-decoration: none;
-    cursor: none;
+    //cursor: none;
 }
 
 ::selection {
@@ -61,7 +62,7 @@ body {
     display: grid;
     width: 100vw;
     overflow-x: hidden;
-    cursor: none;
+    //cursor: none;
 }
 
 .custom-cursor {
@@ -92,16 +93,16 @@ body {
 }
 
 h1 {
+    font-weight: 600;
     color: $white;
     font-size: calc($base-font-size*$typo-scale*$typo-scale*$typo-scale);
 }
 
-.details h1 {
-    color: $white;
-}
+
 
 h2 {    
     font-size: calc($base-font-size*$typo-scale*$typo-scale);
+    font-weight: 600;
 }
 
 h3 {
@@ -127,11 +128,129 @@ h1, h2, h3, p {
     animation-fill-mode: forwards;
     animation-delay: .5s;
     margin: 0;
+    //vertical-align: baseline;
 }
 
 h2, h3, p {
     color: $mid-gray;
 }
+
+.case-study-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    overflow: hidden;
+    border-radius: .5em;
+    border-width: .25vh; border-style: solid;
+    height: 50vh;
+    max-height: 50vh;
+    width: 50%;
+    max-width: 50%;
+    overflow: hidden;
+    padding: .5vw;
+
+    img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        align-self: center;
+        border-radius: .5em;
+        transition: transform .3s ease-in;
+    }
+
+    &:hover {
+        img { 
+            transform: scale(1.04);
+        }
+    }
+}
+
+#katch {
+    padding-left: 1%;
+    padding-right: 1%;   
+    box-shadow: 0px 0px 20px $katch-color-shadow;
+    background: linear-gradient(to right, rgba(82,136,178,1), rgba(99,147,185, 1));
+    border-color: rgba(82,136,178,0.5); 
+    img {
+        min-width: 45%;
+        height: 250%;
+        object-fit: contain;
+        transition: transform 1.5s ease-in;
+
+    }
+    :nth-child(1), :nth-child(3) {
+        top: 50%;
+    }
+    :nth-child(2) {
+        top: 30%;
+    }
+    &:hover {
+        img {
+            transform: translateY(-17.5%);
+        }
+    }
+}
+
+#sismo {
+    box-shadow: 0px 0px 20px $sismo-color-shadow;
+    border-color: rgba(125,134,191,1);
+    background: var(--Gradient, linear-gradient(286deg, #193970 -75.26%, #12203D 72.97%));    
+    img {
+        object-fit: cover;
+    }
+}
+
+#tomo {
+    box-shadow: 0px 0px 20px $tomo-color-shadow;
+    border-color: #284C57;
+    background-color: #1D3239;
+    padding: 0;
+    img {
+        object-fit: cover;
+    }
+}
+
+#focusmate {
+    box-shadow: 0px 0px 20px $focusmate-color-shadow;
+    background-color: $focusmate-color;
+    border-color: $focusmate-color;
+    padding: 0;
+    img {
+        object-fit: cover;
+    }
+}
+
+#tidbits {
+    box-shadow: 0px 0px 20px $tidbits-color-shadow;
+    background-color: $tidbits-color;
+    border-color: $tidbits-color;
+    padding: 0;
+    img {
+        position: relative;
+        top: 200%;
+        height: 500%;
+        object-fit: cover;
+        transition: transform 4.5s ease-in;
+    }
+    &:hover {
+        img {
+            transform: translateY(-80%);
+        }
+    }
+}
+
+#vidbib {
+    box-shadow: 0px 0px 20px $tidbits-color-shadow;
+    background-color: $vidbib-color;
+    border-color: $vidbib-color;
+    padding: 0;
+    img {
+        object-fit: cover;
+    }
+}
+
+
 
 .archived-card > h3 {
     color: $white;
@@ -144,9 +263,10 @@ p {
 }
 
 a {
-    cursor: none;
+    //cursor: none;
 }
 
+/*
 #katch {
     display: flex;
     justify-content: center;
@@ -167,6 +287,7 @@ a {
             transition: filter .5s linear, transform 50s linear;
         }
     }
+    
 
     &:hover {
 
@@ -182,6 +303,7 @@ a {
     
     }
 }
+*/
 
 
 #hero-headline {
@@ -214,7 +336,7 @@ ul {
     position: fixed;
     background: rgba($black, 0.75) center/cover;
     //backdrop-filter: blur(3px);
-    cursor: none;
+    //cursor: none;
     border: 0px $dark-gray solid;
     border-radius: 1.5rem;
     top: 1.5%;
@@ -285,28 +407,14 @@ ul {
 
 section, .section, main {
     display: grid;
-}
-
-section, .section {
-    padding: $desktop-padding;
-    gap: 1em;
+    padding: calc($desktop-padding/2) $desktop-padding calc($desktop-padding/2) $desktop-padding;
+    gap: 2.5em;
 }
 
 main {
-    padding: 0;
-    gap: 0;
+    align-content: center;
     background: rgba($black, 0) center/cover;
     backdrop-filter: blur(3px);
-    .header {
-        padding: $desktop-padding;
-        padding-bottom: calc($desktop-padding/2);
-    }
-}
-
-#case-studies {
-    background: rgba($black, 0) center/cover;
-    backdrop-filter: blur(3px);
-    padding-top: calc($desktop-padding/2);
 }
 
 .v-content {
@@ -316,8 +424,10 @@ main {
 
 .columns {
     display: flex;
-    gap: 0em;
-    width: 100%;
+    justify-content:left;
+    gap: 2.5em;
+    max-width: 100%;
+    overflow: hidden;
     z-index: 2;
 }
 
@@ -369,7 +479,7 @@ main {
 }
 
 a {
-    cursor: none;
+    //cursor: none;
     color: $white;
 }
 
@@ -451,6 +561,10 @@ footer {
     z-index: 2;
 }
 
+.details h1 {
+    color: $white;
+}
+
 .right {
     padding: $desktop-padding;
     padding-right: 0;
@@ -483,59 +597,9 @@ footer {
     }
 }
 
-#katch, #sismo, #tomo, #focusmate, #tidbits {
-    //border: 1px $black-900 solid;
-    //border-radius: 1em;
-    //background: hsla(0, 0%, 0%, 0) center/cover;
-    //backdrop-filter: blur(3px);
-    
-}
-
-#sismo, #tomo, #focusmate, #tidbits {
-    width: 50%;
-    height: 50vh;
-    padding: 0;
-    overflow: hidden;
-    img {
-        width: 100%;
-        object-fit: contain;
-        overflow: hidden;
-        //transition: transform 5s linear;
-    }
-    &:hover {
-        img {
-            transform: scale(1.1);
-        }
-    }
-}
-
-#sismo, #tomo, #focusmate {
-    img {
-        transition: transform 1s linear;
-    }
-}
-
-#tidbits {
-    img {
-        transition: transform 5s linear;
-    }
-}
-
- #tomo {
-    img {
-        transition: transform .5s linear;
-        transform: scale(1.1);
-    }
-    &:hover {
-        img {
-            transform: scale(1.25);
-        }
-    }
-}
-
 .archives {
     display: grid;
-    padding: $desktop-padding;
+    //padding: $desktop-padding;
 }
 
 .archived-card {
@@ -550,28 +614,6 @@ footer {
     width: 50%;
     justify-content: space-between;
 }
-
-/*
-#katch {
-    box-shadow: 0px 0px 20px $katch-color-shadow;
-}
-
-#sismo {
-    box-shadow: 0px 0px 20px $sismo-color-shadow;
-}
-
-#tomo {
-    box-shadow: 0px 0px 20px $tomo-color-shadow;
-}
-
-#focusmate {
-    box-shadow: 0px 0px 20px $focusmate-color-shadow;
-}
-
-#tidbits {
-    box-shadow: 0px 0px 20px $tidbits-color-shadow;
-}
-*/
 
 @keyframes moveBackground {
     0% {

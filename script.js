@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // For secondary case study cards, get img height: 
-    
+    /*
     const tidbitsImg = document.getElementById('tidbits-img');
     tidbitsImg.addEventListener('load', () => {
         const tidbitsImgHeight = tidbitsImg.scrollHeight;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.head.appendChild(sismoStyle);
     });
-
+    */
     // Navigation hide/show
 
     let lastScrollPosition = 0;
