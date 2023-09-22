@@ -122,7 +122,7 @@ h1, h2, h3 {
     width: 55%;
 }
 
-h1, h2, h3, p, i {
+h1, h2, h3, p, i, img, svg {
     opacity: 0;
     animation-name: into-view;
     animation-duration: 1s;
@@ -428,6 +428,25 @@ main {
     max-width: 100%;
     //overflow: hidden;
     z-index: 2;
+}
+
+#tool-stack {
+    i {
+        font-size: 2em;
+    }
+    
+    svg {
+        height: 2em;
+        fill: $white;
+    }
+
+    i, svg {
+        transition: fill 0.3s ease-in, color 0.3s ease-in;
+        &:hover {
+            fill: $orange;
+            color: $orange;
+        }
+    }
 }
 
 .before-after {
