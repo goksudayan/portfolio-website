@@ -112,6 +112,16 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
 }
 
+#emp{
+    &::after {
+        content:" — ";
+    }
+}
+
+#hero-description {
+    width: 55%;
+}
+
 h1, h2, h3, p, i {
     opacity: 0;
     animation-name: into-view;
@@ -472,6 +482,12 @@ a {
     color: $white;
 }
 
+#about {
+    #hand-wave {
+        font-size: calc($base-font-size*$typo-scale);
+    }
+}
+
 #blog {
     z-index: 1;
 }
@@ -628,7 +644,7 @@ footer {
     width: 30%;
     justify-content: space-between;
     border: 1px color.scale($dark-gray, $lightness: 10%) solid;
-    transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
+    transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in, background-color 0.3s ease-in;
 
     i {
         font-size: 1.5em;
@@ -642,6 +658,7 @@ footer {
     &:hover {
         box-shadow: 0px 0px 18px 2px color.scale($dark-gray, $lightness: 10%);
         border-width: 0;
+        background-color: rgba($dark-gray,0.6)
     }
 }
 
@@ -679,7 +696,20 @@ footer {
 @media(max-width: 700px) {
     * {
         $base-font-size: 16px;
+        $typo-scale: 1.25;
         margin: 1.5% 2.5%;
+    }
+
+    #navbar {
+        visibility: hidden;
+    }
+
+    #hero-headline {
+        line-height: 100%;
+    }
+
+    #hero-description {
+        width: 100%;
     }
 
     div {
