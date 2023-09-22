@@ -511,6 +511,67 @@ a {
     z-index: 1;
 }
 
+#socials-div {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+
+    .social {
+        transition: color 0.3s ease-in, fill 0.3s ease-in;
+        
+        svg {
+            width: 2em;
+            height: 2em;
+            transition: fill 0.3s ease-in;
+        }
+
+        i {
+            font-size: 4em;
+            transition: color 0.3s ease-in;
+        }
+
+        &:hover {
+            i {
+                color: $orange;
+            }
+            svg {
+                fill: $orange;
+            }
+        }
+    }
+}
+
+.contact-card-in {
+    display: flex;
+    width: min-content;
+    align-items: center;
+    gap: 2em;
+    
+    i {
+        width: 1em;
+        height: 1em;
+        font-size: calc($base-font-size*$typo-scale);
+    }
+    
+    #email {
+        
+        i {
+            color: $orange;
+        }
+        
+        &:hover {
+            i, h3 {
+                color: red;
+            }
+        }
+
+    }
+}
+
 footer {
     padding: calc($desktop-padding/8);
     background-color: $orange;
@@ -522,39 +583,6 @@ footer {
 
     a {
         color: $black;
-    }
-    
-    #contact {
-        display: grid;
-        gap: 1em;
-        .social {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2em;
-            height: 2em;
-            border-radius: 5em;
- 
-            & #email {
-                background-color: $orange;
-                i {
-                    color: $black;
-                    border: none;
-                }
-            }
-            &#linkedin {
-                background-color: #0072b1;
-                i {
-                    border: none;
-                }
-            }
-            &#medium {
-                background-color: $dark-gray;
-                i {
-                    border: none;
-                }
-            }
-        }
     }
 }
 
