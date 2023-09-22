@@ -545,12 +545,30 @@ a {
     }
 }
 
-.contact-card-in {
-    display: flex;
-    width: min-content;
-    align-items: center;
-    gap: 2em;
+
+
+.contact {
     
+    transition: color 0.5s ease-in;
+
+    .contact-card-in {
+        display: flex;
+        width: min-content;
+        align-items: center;
+        gap: 2em;
+    }
+
+    #linkedin {
+        &:hover {
+            i, h3 {
+                color: blue;
+            }
+            p {
+                color: blue;
+            }
+        }
+    }
+
     i {
         width: 1em;
         height: 1em;
@@ -559,14 +577,11 @@ a {
     
     #email {
         
-        i {
+        i, h3 {
             color: $orange;
         }
-        
-        &:hover {
-            i, h3 {
-                color: red;
-            }
+        p {
+            color: $orange;
         }
 
     }
