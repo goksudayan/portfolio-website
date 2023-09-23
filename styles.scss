@@ -317,7 +317,7 @@ a {
 #hero-headline {
     font-family: "Cormorant", serif;
     margin-bottom: .5em;
-    //font-weight: bold;
+    font-weight: bold;
     line-height: 20%;
     font-size:5rem;
     &::after {
@@ -397,7 +397,7 @@ ul {
     width: 100%;
     background-color: $dark-gray;
     height: 1px;
-    z-index: 0;
+    z-index: 10;
 }
 
 #hero-section {
@@ -738,6 +738,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
+    background-color: none;
+    transition: background-color 0.5s ease-in;
+    &:hover {
+        background-color: rgba($dark-gray, .5);
+    }
 }
 
 .archived-card-description {
@@ -839,6 +844,14 @@ footer {
 
     .case-study-card {
         height: 30vh;
+    }
+
+    #hero-headline {
+        line-height: 100%;
+        font-size: 2.8rem;
+        #emp {
+            font-size: 3rem;
+        }
     }
 }
 
