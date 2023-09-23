@@ -17,7 +17,7 @@ $sismo-color: rgb(19, 32, 62);
 $sismo-border-color: rgba(125,134,191,1);
 $tomo-color: #2f5966;
 $focusmate-color: #3C4087;
-$tidbits-color: #D6C9B9;
+$paro-color: #D6C9B9;
 $vidbib-color: #6E6BFF;
 
 * {
@@ -90,7 +90,13 @@ h1 {
     font-weight: 600;
     color: $white;
     font-size: calc($base-font-size*$typo-scale*$typo-scale*$typo-scale);
+    
+    &::after {
+        content: " — ";
+    }
 }
+
+
 
 h2 {    
     font-size: calc($base-font-size*$typo-scale*$typo-scale);
@@ -146,8 +152,6 @@ h2, h3, p {
     border-width: .25vh; border-style: solid;
     height: 50vh;
     max-height: 50vh;
-    width: 50%;
-    max-width: 50%;
     overflow: hidden;
     padding: .5vw;
 
@@ -156,7 +160,7 @@ h2, h3, p {
         width: 100%;
         height: 100%;
         align-self: center;
-        border-radius: .5em;
+        //border-radius: .5em;
         transition: transform .3s ease-in;
     }
 
@@ -237,7 +241,7 @@ h2, h3, p {
 }
 
 #focusmate {
-    box-shadow: 0px 0px 20px $focusmate-color;
+    box-shadow: 0px 0px 0px $focusmate-color;
     background-color: $focusmate-color;
     border-color: $focusmate-color;
     padding: 0;
@@ -246,7 +250,7 @@ h2, h3, p {
     }
     transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
     &:hover {
-        box-shadow: 0px 0px 18px 0px $focusmate-color;
+        box-shadow: 0px 0px 18px 2px $focusmate-color;
         border-width: 0;
         img { 
             transform: scale(1.02);
@@ -254,10 +258,10 @@ h2, h3, p {
     }
 }
 
-#tidbits {
-    box-shadow: 0px 0px 20px $tidbits-color;
-    background-color: $tidbits-color;
-    border-color: $tidbits-color;
+#paro {
+    box-shadow: 0px 0px 0px $paro-color;
+    background-color: $paro-color;
+    border-color: $paro-color;
     padding: 0;
     img {
         position: relative;
@@ -268,7 +272,7 @@ h2, h3, p {
     }
     transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
     &:hover {
-        box-shadow: 0px 0px 18px 0px $tidbits-color;
+        box-shadow: 0px 0px 18px 2px $paro-color;
         border-width: 0;
         img {
             transform: translateY(-80%);
@@ -277,7 +281,7 @@ h2, h3, p {
 }
 
 #vidbib {
-    box-shadow: 0px 0px 20px $vidbib-color;
+    box-shadow: 0px 0px 0px $vidbib-color;
     background-color: $vidbib-color;
     border-color: $vidbib-color;
     padding: 0;
@@ -286,7 +290,7 @@ h2, h3, p {
     }
     transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
     &:hover {
-        box-shadow: 0px 0px 18px 0px $vidbib-color;
+        box-shadow: 0px 0px 18px 2px $vidbib-color;
         border-width: 0;
         img {
             transform: scale(1.02);
@@ -316,6 +320,9 @@ a {
     //font-weight: bold;
     line-height: 20%;
     font-size:5rem;
+    &::after {
+        content: none;
+    }
     #emp {
         font-size: 5rem;
         font-style: italic;
@@ -421,13 +428,13 @@ main {
     gap: .5em;   
 }
 
-.columns {
-    display: flex;
-    justify-content:left;
+.case-study-div {
+    display: grid;
+    justify-content: left;
     gap: 2.5em;
     max-width: 100%;
-    //overflow: hidden;
     z-index: 2;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 #tool-stack {
@@ -548,8 +555,8 @@ a {
 
 
 .contact {
-    
-    transition: color 0.5s ease-in;
+
+    transition: color 0.5s ease-in; 
 
     .contact-card-in {
         display: flex;
@@ -558,33 +565,81 @@ a {
         gap: 2em;
     }
 
-    #linkedin {
-        &:hover {
-            i, h3 {
-                color: blue;
-            }
-            p {
-                color: blue;
-            }
-        }
-    }
-
     i {
         width: 1em;
         height: 1em;
         font-size: calc($base-font-size*$typo-scale);
     }
-    
+
     #email {
-        
-        i, h3 {
+        i, h3, p {
             color: $orange;
         }
-        p {
-            color: $orange;
+    }
+    
+    #linkedin {
+        
+        i, h3, p {
+            transition: color 0.5s ease-in; 
+        }
+
+        &:hover {
+            i, h3, p {
+                color: #0072b1;
+            }
         }
 
     }
+
+    #medium {
+        
+        i, h3, p {
+            transition: color 0.5s ease-in; 
+        }
+
+        &:hover {
+            i, h3, p {
+                color: green;
+            }
+        }
+
+    }
+
+    #calendly {
+        
+        i, h3, p {
+            transition: color 0.5s ease-in; 
+        }
+
+        &:hover {
+            i, h3, p {
+                color: rgb(0,108,255);
+            }
+        }
+
+    }
+
+    #github {
+        
+        i, h3, p {
+            transition: color 0.5s ease-in; 
+        }
+
+        &:hover {
+            i, h3, p {
+                color: rgb(235, 255, 85);
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
 }
 
 footer {
@@ -706,7 +761,7 @@ footer {
     width: 30%;
     justify-content: space-between;
     border: 1px color.scale($dark-gray, $lightness: 10%) solid;
-    transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in, background-color 0.3s ease-in;
+    transition: box-shadow 0.3s ease-in -0.05s, border-color 0.3s ease-in, background-color 0.3s ease-in;
 
     i {
         font-size: 1.5em;
@@ -719,7 +774,7 @@ footer {
 
     &:hover {
         box-shadow: 0px 0px 18px 2px color.scale($dark-gray, $lightness: 10%);
-        border-width: 0;
+        border-color: rgba($dark-gray,0.3);
         background-color: rgba($dark-gray,0.6)
     }
 }
@@ -776,6 +831,14 @@ footer {
 
     div {
         max-width: 100%;
+    }
+
+    .case-study-div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .case-study-card {
+        height: 30vh;
     }
 }
 
