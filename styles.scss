@@ -784,6 +784,42 @@ footer {
     }
 }
 
+#katch-head-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    gap: 2em;
+    padding: $desktop-padding;
+    max-width: 100vw;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    img {
+        max-width: calc( (100vw - 4em - 10vw) / 3);
+        height: 250%;
+        object-fit: contain;
+        transition: transform 1.5s ease-in;
+
+    }
+    :nth-child(1), :nth-child(3) {
+        top: 50%;
+    }
+    :nth-child(2) {
+        top: 30%;
+    }
+}
+
+span#emp-text {
+    background-color: rgba($orange, 0.5);
+}
+
+.case-study-content {
+    display: flex;
+    gap: 0.5em;
+}
+
 @keyframes moveBackground {
     0% {
         top: 0vh;
