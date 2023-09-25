@@ -338,6 +338,20 @@ nav a {
 
 ul {
     list-style: none;
+    display: grid;
+    gap:0.5em;
+}
+
+.circle-li {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border: 1px $mid-gray solid;
+    font-size: 1em;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
 }
 
 #navbar {
@@ -811,13 +825,28 @@ footer {
     }
 }
 
-span#emp-text {
-    background-color: rgba($orange, 0.5);
+.emp-text {
+    background-color: $orange;
+    color: $black;
+    padding: 0 0.2em 0 0.2em;
+    width: max-content;
 }
 
 .case-study-content {
-    display: flex;
+    display: grid;
+    align-items: start;
     gap: 0.5em;
+    
+    ul  {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        color: $mid-gray;
+        li {
+            justify-content: end;
+            width: 33%;
+        }
+    }
 }
 
 @keyframes moveBackground {
