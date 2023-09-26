@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Göksu Dayan - Holistic Product Designer: Focusmate - Case study</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kjv1ons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6dd85bdfdf.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</head>
+<body class="case-study-page">
+    <nav id="navbar" class="visible">
+        <ul class="links">
+            <li><a href="#hero-section" id="brand-name">Göksu Dayan</a></li>
+            <li><a href="#work" class="nav-item">Work</a></li>
+            <li><a href="#" class="nav-item">Resume</a></li>
+            <li><a href="#process" class="nav-item">About</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="page-section">
+        <img src="assets/focusmate-card.png">
+    </div>
+
+    <section class="page-section" id="overview">
+
+        <div class="header">
+            <h3>Virtual coworking for getting anything done</h3>
+            <h1>Focusmate</h1>
+        </div>
+            
+        <h2>Overview</h2>
+
+        <div id="case-study-content" id="disclaimer">
+            <h3>Disclaimer</h3>
+            <p>Additionally, none of the information, deliverables, or design decisions presented in this case study represent the views or opinions of Focusmate. </p>
+        </div>
+
+        <div class="case-study-content">
+            <h3>Product introduction</h3>
+            <p>Scope — Self-initiated</p>
+            <p>Platforms — Web</p>
+            <p>Timeframe — March 2022</p> 
+            <p>Links — <a href="https://www.focusmate.com/" target="_blank">Product website</a></p>
+        </div>
+
+        <div class="case-study-content">
+            <h3>Introduction</h3>
+            <p><a href="https://www.focusmate.com" target="_blank">Focusmate</a>changes the way you work by connecting you to other professionals who have committed to being accountable for finishing their most important work. You choose a time to work, and Focusmate pairs you with an accountability partner for a live, virtual coworking session that will keep you on task.</p>
+            <p>As part of my application for a product designer position at Focusmate which was submitted on March 22, 2022, I was tasked with <span class="emp-text">proposing changes to their platform</span>. According to a heuristic evaluation study I conducted, I found zero P0 issues, nine P1 issues, and sixteen P2 issues. I selected three issues to address. It should be noted that all of these issues existed as of March 22, 2022, but some or all may have since been resolved by the Focusmate team. Kudos to them!</p>
+        </div>
+
+    </section>
+
+    <section class="page-section" id="report-video">
+
+            <h1>Change: Report Video</h1>
+
+        <div class="case-study-content">
+            <h3>Issue</h3>
+
+            <p>When a user clicks the Report Video Issue button, without any other prompt, she gets the screen below:</p>
+
+            <img src="assets/focusmate-issue-one.webp" alt="">
+
+            <p>There are several reasons why this results in a poor user experience:</p>
+            <ul>
+                <li><span class="circle-li">1</span><span class="emp-text">The user is not provided with any information about the issue, and may not even know if they are supposed to know what the issue is.</span></li>
+                <li><span class="circle-li">2</span>The user is not asked for their consent to submit their data, which can be confusing and disturbing.</li>
+                <li><span class="circle-li">3</span>It is unclear what information is being reported to Focusmate, and whether it includes screen recordings, browser metadata, or study session data.</li>
+                <li><span class="circle-li">4</span><span class="emp-text">Some users may click the button by accident, creating unnecessary work for the Focusmate team.</span></li>
+                <li><span class="circle-li">5</span><span class="emp-text">The message "Thanks for reporting this video issue" implies that there is an issue, which may not always be the case.</span>
+                </li>
+            </ul>
+
+            <p>Clicking the Yes button directs the user to a Typeform survey, which can be confusing as the user does not know if their initial report was sufficient.</p>
+
+        </div>
+
+        <div class="case-study-content">
+
+            <h3>Solution</h3>
+
+            <img src="assets/focusmate-solution-one.webp" alt="">
+
+        </div>
+
+    </section>
+
+    <section class="page-section" id="leave-session">
+        <h1>Change: Leave Session</h1>
+
+        <div class="case-study-content">
+            
+            <h3>Issue</h3>
+
+            <p>Clicking the "Leave" button during a session directs the user to the dashboard without confirmation, which can be distracting for they and their session partner.</p>
+
+        </div>
+
+        <div class="case-study-content">
+
+            <h3>Solution</h3>
+
+            <p>When the user clicks the "Leave" button, a modal should appear to confirm their intention to leave the current session before directing them to the dashboard.</p>
+
+            <img src="assets/focusmate-solution-two.webp" alt="">
+
+        </div>
+
+    </section>
+
+    <section class="page-section" id="session-sync">
+        <h1>Change: Session Sync</h1>
+
+        <div class="case-study-content">
+            <h3>Issue</h3>
+
+            <p>When a user schedules a study session, they can specify the task they plan to accomplish, and a "Focusmate Session" task is added to their external calendar. However, since the task input is not synchronized with the external calendar, this feature has limited usefulness.</p>
+            <p>It is assumed that most Focusmate power users follow strict time management systems and maintain their daily plans and calendars, including entering their tasks into their preferred digital calendar such as Google Calendar.</p>
+
+            <img src="assets/focusmate-issue-two-one.webp" alt="">
+            <img src="assets/focusmate-issue-two-two.webp" alt="">
+
+        </div>
+
+        <div class="case-study-content">
+            <h3>Solution</h3>
+            <img src="assets/focusmate-solution-three.webp" alt="">
+        </div>
+
+    </section>
+
+    
+    <section class="page-section contact" id="contact">
+        
+        <div>
+
+            <h3>Interested in working together??</h3>
+            <h1>Let's get in touch</h1>
+            <br>
+
+            <div class="section-divider"></div>
+
+            <a href="mailto:hello@goksudayan.com" target="_blank" id="email">
+                <div class="archived-card">
+                    <div class="contact-card-in">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h3>Email</h3>
+                    </div>
+                    <p>My primary communication method</p>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="https://www.linkedin.com/in/goksudayan" target="_blank" id="linkedin">
+                <div class="archived-card">
+                    <div class="contact-card-in">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <h3>LinkedIn</h3>
+                    </div>
+                    <p>Let's connect on the world's largest professional network</p>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="https://goksudayan.medium.com" target="_blank" id="medium">
+                <div class="archived-card">
+                    <div class="contact-card-in">
+                        <i class="fa-brands fa-medium"></i>
+                        <h3>Medium</h3>
+                    </div>
+                    <p>My occasional writings reside in here</p>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="https://calendly.com/goksudayan/meeting-with-goksu-dayan?month=2023-09" target="_blank" id="calendly">
+                <div class="archived-card">
+                    <div class="contact-card-in">
+                        <i class="fa-regular fa-calendar"></i>
+                        <h3>Calendly</h3>
+                    </div>
+                    <p>In case you need to set up a meeting asap</p>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+            <a href="https://github.com/goksudayan" target="_blank" id="github">
+                <div class="archived-card">
+                    <div class="contact-card-in">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>Github</h3>
+                    </div>
+                    <p>My code lives here</p>
+                </div>
+            </a>
+
+            <div class="section-divider"></div>
+
+        </div>
+
+    </section>
+
+    <a id="to-top-container" href="#hero-section">
+        <div id="to-top">
+            <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_862_289)">
+                <path d="M32 56.3711L32.1373 9.33776" stroke="#f2a60d" stroke-width="6" stroke-linecap="round"/>
+                <path d="M11.5 29.8711L32.004 8.47315" stroke="#f2a60d" stroke-width="6" stroke-linecap="round"/>
+                <path d="M54.0017 30.373L32.1899 8.70666" stroke="#f2a60d" stroke-width="6" stroke-linecap="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_862_289">
+                <rect width="64" height="64" rx="32" fill="#f2a60d"/>
+                </clipPath>
+                </defs>
+            </svg>     
+        </div>
+    </a>    
+
+    <div class="section-divider"></div>
+
+    <footer>
+       
+        <p>Designed and coded by <a href="mailto:hello@goksudayan.com">Göksu Dayan</a></p>
+
+    </footer>
+
+</body>
+</html>
