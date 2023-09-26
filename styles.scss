@@ -118,6 +118,18 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
 }
 
+blockquote {
+    border-left: .1em $mid-gray solid;
+    margin-top: .5em;
+    padding: calc($desktop-padding / 4) 0 calc($desktop-padding / 4) calc($desktop-padding / 2);
+    color: $mid-gray;
+    footer {
+        padding-top: 1.5em;
+        background-color: transparent;
+        color: $white;
+    }
+}
+
 #emp{
     &::after {
         content:" — ";
@@ -314,6 +326,17 @@ a {
     //cursor: none;
 }
 
+table {
+    color: $mid-gray;
+    th {
+        text-align: left;
+    }
+
+    td {
+
+    }
+}
+
 #hero-headline {
     font-family: "Cormorant", serif;
     margin-bottom: .5em;
@@ -346,12 +369,13 @@ ul {
     display: grid;
     justify-content: center;
     align-items: center;
-    width: 2em;
-    height: 2em;
+    min-width: 2em;
+    min-height: 2em;
+    max-width: 2em;
+    max-height: 2em;
     border: 1px $mid-gray solid;
     font-size: 1em;
     border-radius: 50%;
-    margin-bottom: 0.5em;
 }
 
 #navbar {
@@ -802,11 +826,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 85vh;
     gap: 2em;
     padding: $desktop-padding;
     max-width: 100vw;
-    background-color: red;
+    background-color: color.scale($katch-color, $lightness: -50%);
     position: relative;
     overflow: hidden;
     margin: auto;
@@ -825,11 +849,87 @@ footer {
     }
 }
 
+.case-study-head-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    padding: $desktop-padding;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    background-color: red;
+    img {
+        position: relative;
+        object-fit: contain;
+        width: 70vw;
+        top: 20%;
+        border-radius: 0.5em;
+    }
+}
+
+#sismo-header {
+    background: var(--Gradient, linear-gradient(286deg, #193970 -75.26%, #12203D 72.97%));
+}
+
+#sismo-header-img {
+    border-color: $sismo-border-color;
+    box-shadow: 0px 0px 18px 2px $sismo-border-color;
+}
+
+#tomo-header {
+    background-color: #1D3239;
+}
+
+#tomo-header-img {
+    position: relative;
+    min-width: 100vw;
+    top: 0;
+    right: 0;
+    object-fit: contain;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#focusmate-header {
+    background-color: $focusmate-color;
+}
+
+#focusmate-header-img {
+    border-color: $focusmate-color;
+    box-shadow: 0px 0px 18px 2px $focusmate-color;
+}
+
+#paro-header {
+    background-color: $paro-color;
+    min-width: 100vw;
+}
+
+#paro-header-img {
+    border-color: $paro-color;
+    box-shadow: 0px 0px 18px 2px $paro-color;
+    position: relative;
+    min-width: 70vw;
+    top: 270%;
+    object-fit: contain;
+    border-radius: 0.5em;
+}
+
+#vidbib-header {
+    background-color: $vidbib-color;
+}
+
+#vidbib-header-img {
+    border-color: $vidbib-color;
+    box-shadow: 0px 0px 18px 2px $vidbib-color;
+}
+
+
 .emp-text {
-    background-color: $orange;
-    color: $black;
-    padding: 0 0.2em 0 0.2em;
-    width: max-content;
+    color: $white;
+    //width: fit-content;
 }
 
 .case-study-content {
@@ -838,15 +938,73 @@ footer {
     gap: 0.5em;
     
     ul  {
-        display: flex;
+        display: grid;
         gap: 1em;
         align-items: center;
         color: $mid-gray;
         li {
-            justify-content: end;
-            width: 33%;
+            display: flex;
+            gap: .5em;
+            justify-content: start;
+            align-items: center;
+            line-height: 150%;
         }
     }
+    a {
+        font-weight: 500;
+        &::after {
+            content: " ↗ "
+        }
+    }
+}
+
+
+.case-study-page {
+    width: 70vw;
+    border-left: 1px $dark-gray solid;
+    border-right: 1px $dark-gray solid;
+    margin: 0 15vw 0 15vw;
+    img {
+        width: 100%;
+        border-radius: 0.5em;
+    }
+}
+
+
+
+
+.feature-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+    img {
+        max-width: 40%;
+    }
+    .ab-test {
+        max-width: 60%;
+    }
+    .tomo-feature {
+        max-width: 60%;
+    }
+
+    
+    .feature-description {
+        display: grid;
+        gap: .25em;
+        margin: auto 0 auto 0;
+    }
+}
+
+#overview {
+    padding-top: 15vh;
+}
+
+#disclaimer {
+    display: grid;
+    gap: 0.5em;
+    background-color: $dark-gray;
+    padding: calc($desktop-padding / 4);
+    border-radius: 0.5em;
 }
 
 @keyframes moveBackground {

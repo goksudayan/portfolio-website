@@ -14,22 +14,22 @@
     <script src="script.js"></script>
 
 </head>
-<body class="case-study-page">
+<body>
     <nav id="navbar" class="visible">
         <ul class="links">
-            <li><a href="#hero-section" id="brand-name">Göksu Dayan</a></li>
-            <li><a href="#work" class="nav-item">Work</a></li>
+            <li><a href="index.html" id="brand-name">Göksu Dayan</a></li>
+            <li><a href="index.html#work" class="nav-item">Work</a></li>
             <li><a href="#" class="nav-item">Resume</a></li>
-            <li><a href="#process" class="nav-item">About</a></li>
+            <li><a href="index.html#about" class="nav-item">About</a></li>
             <li><a href="#contact" class="nav-item">Contact</a></li>
         </ul>
     </nav>
     
-    <div class="page-section">
-        <img src="assets/tomo-card.png">
+    <div class="case-study-head-section" id="tomo-header">
+        <img src="assets/tomo-card.png" id="tomo-header-img">
     </div>
 
-    <section class="page-section" id="overview">
+    <section class="case-study-page" id="overview">
 
         <div class="header">
             <h3>Time management made easiest for you</h3>
@@ -64,7 +64,7 @@
 
     </section>
 
-    <section class="page-section" id="research">
+    <section class="case-study-page" id="research">
 
             <h1>Research</h1>
 
@@ -84,9 +84,10 @@
 
             <img src="assets/tomo-diary.webp" alt="">
 
-            <q>
-                That being said I am a bit stressed about the workload. I should only handle the urgent task today and put my best effort from tomorrow. - Quote from an interviewee's diary
-            </q>
+            <blockquote>
+                "That being said I am a bit stressed about the workload. I should only handle the urgent task today and put my best effort from tomorrow."
+                <footer>- Quote from an interviewee's diary</footer>
+            </blockquote>
 
         </div>
 
@@ -139,21 +140,25 @@
 
     </section>
 
-    <section class="so-what-now" id="so-what-now">
+    <section class="case-study-page" id="so-what-now">
 
         <h1>So, what now?</h1>
 
-        <p>Based on my research, I have concluded that a time management product that I would be designing ought...</p>
+        <div class="case-study-content">
 
-        <ul>
-            <li><span class="circle-li">1</span>to make the user's schedule based on their energy levels and moods,</li>
-            <li><span class="circle-li">2</span>to be extremely easy to use and reduce the time spent on time management significantly,</li>
-            <li><span class="circle-li">3</span>to allow the user to (re-)make their schedule based on their input with only a few clicks,</li>
-            <li><span class="circle-li">4</span>to be there for the user when sh*t happens,</li>
-            <li><span class="circle-li">5</span>not to clutter the user's mind with information unnecessary at any time, and</li>
-            <li><span class="circle-li">6</span>to allow the user to focus on "one task at a time".</li>
+            <p>Based on my research, I have concluded that a time management product that I would be designing ought...</p>
 
-        </ul>
+            <ul>
+                <li><span class="circle-li">1</span>to make the user's schedule based on their energy levels and moods,</li>
+                <li><span class="circle-li">2</span>to be extremely easy to use and reduce the time spent on time management significantly,</li>
+                <li><span class="circle-li">3</span>to allow the user to (re-)make their schedule based on their input with only a few clicks,</li>
+                <li><span class="circle-li">4</span>to be there for the user when sh*t happens,</li>
+                <li><span class="circle-li">5</span>not to clutter the user's mind with information unnecessary at any time, and</li>
+                <li><span class="circle-li">6</span>to allow the user to focus on "one task at a time".</li>
+    
+            </ul>
+
+        </div>
 
         <div class="case-study-content">
 
@@ -169,7 +174,10 @@
 
             <p><span class="emp-text">So, the user would focus only on the current task which is the highest priority task with the closest deadline, and would not be prompted by Tomo unless there is an absolute necessity, e.g., they will miss a deadline for another task if they do not complete their current task shortly.</span></p>
 
-            <q>"A to-do list with just one task on it reflects a strategic and intentional choice about what you will do next, and continue to focus on until it’s done. It might feel silly, but writing that one thing down on its own list is the key—it makes it a commitment that you’re far more likely to follow through on. Make meaningful progress, one task at a time." - Peter Bregman</q>
+            <blockquote>
+                "A to-do list with just one task on it reflects a strategic and intentional choice about what you will do next, and continue to focus on until it's done. It might feel silly, but writing that one thing down on its own list is the key—it makes it a commitment that you're far more likely to follow through on. Make meaningful progress, one task at a time."
+                <footer>- Peter Bregman</footer>
+            </blockquote>
 
         </div>
 
@@ -233,10 +241,10 @@
 
             <p><span class="emp-text">As I was not able to decide between two "daily onboarding" flows, the most important insight that I was looking for from this usability test was the test participants' choices on them:</span>(i) which one they would rate higher (or lower), (ii) which one they would state to prefer, and (iii) which one they would take shorter (or longer) to complete.</p>
 
-            <div class="feature-section">
+            <div class="feature-section" style="margin: auto;">
 
-                <img src="assets/tomo-flow-a.gif" alt="">
-                <img src="assets/tomo-flow-b.gif" alt="">
+                <img src="assets/tomo-flow-a.gif" alt="" class="ab-test">
+                <img src="assets/tomo-flow-b.gif" alt="" class="ab-test">
 
                 <div class="case-study-content">
                     <b>Flow A</b>
@@ -245,29 +253,28 @@
                 </div>
 
                 <div class="case-study-content">
-                    <b>Flow B</b>
-                    <p>Avg. completion time: 30.70 secs.</p>
-                    <p>Avg. score: 4.66/5.00</p>
-                    <p><span class="emp-text">USERS'S CHOICE 🏆</span></p>
+                    <b>Flow B 🏆</b>
+                    <p><span class="emp-text">Avg. completion time: 30.70 secs.</span></p>
+                    <p><span class="emp-text">Avg. score: 4.66/5.00</span></p>
                 </div>
 
             </div>
-
+            <br>
             <p>*Flow B was designed merely for test purposes. See the final daily onboarding flow below.</p>
 
         </div>
 
     </section>
 
-    <section class="page-section" id="primary-features">
+    <section class="case-study-page" id="primary-features">
 
         <h1>Primary Feature</h1>
 
         <h3>A schedule for you, not for your tasks</h3>
-        <div class="features-section">
-            <img src="assets/tomo-feature-one.webp" alt="">
+        <div class="feature-section">
+            <img src="assets/tomo-feature-one.webp" class="tomo-feature" alt="">
 
-            <div class="case-study-content">
+            <div class="feature-description">
                 <p>Tomo makes daily scheduling effortless by considering not just tasks but also your energy level.</p>
                 <p>Set your energy level to match how you feel, whether drained or energetic, and Tomo will adapt your schedule accordingly.</p>
                 <p><span class="emp-text">Say goodbye to manual time management stress and hello to a scheduling system that works for you, taking into account your mood and preferred task categories.</span></p>
@@ -278,10 +285,10 @@
 
         <h3>Automated dynamic scheduling</h3>
 
-        <div class="features-section">
-            <img src="assets/tomo-feature-two.gif" alt="">
+        <div class="feature-section">
+            <img src="assets/tomo-feature-two.gif" class="tomo-feature" alt="">
 
-            <div class="case-study-content">
+            <div class="feature-description">
                 <p><span class="emp-text">Tomo streamlines time management with just a few clicks</span>, creating your schedule in seconds based on your energy level and preferred task categories. It continuously adapts your schedule as you complete tasks, ensuring you meet your goals.</p>
                 <p>You no longer have to worry about unexpected events as Tomo has your back and adjusts your schedule for you.</p>
                 <p>Get a better user experience with Tomo's innovative scheduling solution.</p>
@@ -292,10 +299,10 @@
 
         <h3>A schedule that frees your mind</h3>
 
-        <div class="features-section">
-            <img src="assets/tomo-feature-three.webp" alt="">
+        <div class="feature-section">
+            <img src="assets/tomo-feature-three.webp" class="tomo-feature" alt="">
 
-            <div class="case-study-content">
+            <div class="feature-description">
                 <p>Simplify your life with Tomo.</p>
                 <p>No more frustrating tables, calendars, or endless scheduling. <span class="emp-text">Tomo only alerts you when necessary, freeing you to focus on the present.</span></p>
                 <p>Say goodbye to calendar Tetris and enjoy a stress-free life. Trust Tomo to handle the future while you live in the moment.</p>

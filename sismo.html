@@ -14,22 +14,22 @@
     <script src="script.js"></script>
 
 </head>
-<body class="case-study-page">
+<body>
     <nav id="navbar" class="visible">
         <ul class="links">
-            <li><a href="#hero-section" id="brand-name">Göksu Dayan</a></li>
-            <li><a href="#work" class="nav-item">Work</a></li>
+            <li><a href="index.html" id="brand-name">Göksu Dayan</a></li>
+            <li><a href="index.html#work" class="nav-item">Work</a></li>
             <li><a href="#" class="nav-item">Resume</a></li>
-            <li><a href="#process" class="nav-item">About</a></li>
+            <li><a href="index.html#about" class="nav-item">About</a></li>
             <li><a href="#contact" class="nav-item">Contact</a></li>
         </ul>
     </nav>
     
-    <div class="page-section" id="case-head-section">
-        <img src="assets/sismo-card.png">
+    <div class="page-section case-study-head-section" id="sismo-header">
+        <img src="assets/sismo-card.png" id="sismo-header-img">
     </div>
 
-    <section class="page-section" id="overview">
+    <section class="case-study-page" id="overview">
 
         <div class="header">
             <h3>The key primitive for Web3 identities</h3>
@@ -38,7 +38,7 @@
             
         <h2>Overview</h2>
 
-        <div id="case-study-content" id="disclaimer">
+        <div class="case-study-content" id="disclaimer">
             <h3>Disclaimer</h3>
 
             <p>Please note that the design deliverables included in this case study are for reference only and may not match the final designs used by Sismo.</p>
@@ -81,7 +81,7 @@
 
     </section>
 
-    <section class="page-section" id="work">
+    <section class="case-study-page" id="work">
 
         <h1>Work</h1>
 
@@ -125,103 +125,7 @@
 
         </div>
 
-
-
-
-
-
-
-
-    </section>
-
-
-
-    <section class="page-section" id="slack-app">
-        <div class="header">
-            <h>Slack app</h3>
-        </div>
-
-        <div class="case-study-content">
-            <h3>Introduction</h3>
-            <p>After a quick onboarding that brought me up to speed, getting me to know about the issues that the product was facing at the time, the Head of Product and I conducted several brainstorming sessions to decide on the best medium to test the product-market fit and primary/secondary features.</p>
-            <p><span class="emp-text">We concluded that a Slack app would be the ideal medium as it is easy to prototype, it is relatively quick to develop, and, most importantly, most of our target audience would use Slack as part of their professional life regularly.
-            </span></p>
-        </div>
-
-        <div class="case-study-content">
-            <h3>Two forms of availability</h3>
-            <img src="assets/katch-forms-of-availability.webp">
-            <p>Around the time we had just started working on this Slack app, we considered two different forms of availability that I called "local availability" and "global availability".</p>
-            <p><span class="emp-text">Local availability</span>: A person would be locally available when they signal that they are available to the people who sent meeting requests at a prior date or to a pre-selected group of people. This could be called "selective availability" as well.</p>
-            <p><span class="emp-text">Global availability</span>: A person would be globally available when they signal that they are available to everyone. This could be called "unselective availability" as well.</p>
-            <p>The reason why we considered this concept of local availability was that in some very large companies, signaling that you are (globally) available to everyone on your Slack channel means that hundreds of people would be able to request meetings, making it extremely hard for the user to maintain.</p>
-            <p>For reasons that I was not informed of at the time, we were asked to quit working on the Slack app and move to work on the iOS app that the company was already developing at the time I joined.</p>
-            <img src="assets/katch-slack.gif">
-        </div>
-
-    </section>
-
-    <section class="page-section" id="ios-app">
-        <p>Shortly after, per some changes in the company's short-term plan, the executive team set a date for <a href="https://www.producthunt.com/upcoming/katch" target="_blank">a Product Hunt launch</a> and to make sure that we do not miss the deadline, <span class="emp-text">we had to work in a very agile manner</span>, redesigning primary features and preparing/ explaining handoffs to engineers in an almost bi-daily manner to complete the Katch iOS app.
-            
-        <p>As my seniors were worried that the product was bloated with many features, the Head of Product and I were asked to work on and re-design some hand-picked features that were considered necessary for the optimal user experience. Those three key features were:</p>
-
-        <ul>
-            <li><span class="circle-li">1</span>Setting up Availability Hours,</li>
-            <li><span class="circle-li">2</span>Marking Katch cards as done and sending notifications after the call, and</li>
-            <li><span class="circle-li">3</span>Sending meeting requests.</li>
-        </ul>
-
-        <h3>Availability Hours</h3>
-
-        <div class="feature-section">
-
-            <img src="assets/katch-availability-hours.webp" alt="">
-
-
-            <div class="feature-description">
-                <p>"Availability Hours" is a feature that helps the user to get more timely reminder notifications from the Katch iOS app. During those availability hours, a user gets notifications, reminding them to get in touch with another user who sent a meeting request at a prior date and time.</p>
-                <p>A previous version of the Katch iOS app allowed the user to turn on and off this feature, however, as we noticed that thanks to the new user flow, the user would be getting such reminder notifications anyway, we decided to make it a permanent feature that the user cannot toggle off.</p>
-                <p>Yet, in case the user did not grant notifications permission, this feature would not work at all: If the user does not get any notifications, which we consider to be necessary for the ideal user experience, then they cannot get those reminder notifications as well. So, what greets a user when they open the availability hours screen was a popup, asking the user to grant notifications permission to proceed.</p>
-            </div>
-
-        </div>
-
-        <h3>Marking as Done</h3>
-
-        <div class="feature-section">
-
-            <img src="assets/katch-marking-as-done.gif" alt="">
-
-            <div class="feature-description">
-                <p>To make sure the user interface is not bloated with the meeting request cards that are completed, we decided to add some kind of visual element so that the user can remove selected Katch cards from their display.</p>
-                <p>After a very lengthy discussion, we decided to use checkboxes to enable users to select and remove Katch cards from their displays. Even though I voiced my extreme displeasure with this visual design decision strongly many times, as we had to move quickly to the other features, we still went with this decision.</p>
-                <p><span class="emp-text">Some of the reasons why I was so displeased with it are (1) checkboxes commonly are not used for this function (opening an overlay), so users would click those checkboxes, expecting to select Katch cards, not to open some overlay, and (2) the home screen layout loses its consistent alignment.</span></p>
-            </div>
-
-        </div>
-
-        <h3>Send meeting request</h3>
-
-        <div class="feature-section">
-
-            <img src="assets/katch-send-meeting-request.gif" alt="">
-
-            <div class="feature-description">
-                <p>More on this feature later.</p>
-            </div>
-            
-        </div>
-
-
-    </section>
-
-
-
-
-    
-
-
+    </section>  
     
     <section class="page-section contact" id="contact">
         
