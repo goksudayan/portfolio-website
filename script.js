@@ -83,12 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hero = document.getElementById('hero-section');
     const work = document.getElementById('work');
-    const process = document.getElementById('process');
     const about = document.getElementById('about');
     const blog = document.getElementById('blog');
     const contact = document.getElementById('contact');
    
-    const sections = [hero, process, about, blog, contact];
+    const sections = [hero, about, blog, contact];
 
     const triangle = '0,60 0,60 0,60 0,60 30,0 30,0 30,0 30,0 30,0 60,60 60,60 60,60 60,60'; // Hero section - 4
     const square = '0,0 0,0 0,0 0,0 0,60 0,60 0,60 0,60 60,60 60,60 60,60 60,60'; // Katch - 4
