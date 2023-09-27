@@ -357,6 +357,15 @@ table {
 nav a {
     color: $mid-gray;
     text-decoration: none;
+    border: none;
+}
+
+a {
+    border-bottom: .03em $mid-gray solid;
+    transition: border-bottom-color 0.5s ease-in;
+    &:hover {
+        border-bottom-color: $white; 
+    }
 }
 
 ul {
@@ -831,30 +840,59 @@ footer {
     }
 }
 
-#katch-head-section {
+.case-study-header {
+    position: relative;
+    padding-top: 20vh;
+    display: grid;
+    gap: 4em;
+    height: 140vh;
+    overflow: hidden;
+}
+
+#katch-header {
+    background-color: color.scale($katch-color, $lightness: -60%);
+
+    //background: linear-gradient(to bottom, color.scale($katch-color, $lightness: -50%), $black);
+
+}
+
+.case-study-header-info {
+    display: grid;
+    gap: 1.5em;
+    height: min-content;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+
+    > h1::after {
+        content: none;
+    }
+    > h3 {
+        color: $white;
+        line-height: 150%;
+    }
+}
+
+#katch-head-section-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: max-content;
     gap: 2em;
     padding: $desktop-padding;
     max-width: 100vw;
-    background-color: color.scale($katch-color, $lightness: -50%);
     position: relative;
     overflow: hidden;
     margin: auto;
     img {
+        position: relative;
         max-width: calc( (100vw - 4em - 10vw) / 3);
         height: 250%;
         object-fit: contain;
         transition: transform 1.5s ease-in;
-
-    }
-    :nth-child(1), :nth-child(3) {
-        top: 50%;
-    }
-    :nth-child(2) {
-        top: 30%;
+        &:nth-child(2) {
+            margin-bottom: 20%;
+        }
     }
 }
 
@@ -864,6 +902,7 @@ footer {
     align-items: center;
     height: 85vh;
     padding: $desktop-padding;
+    padding-bottom: 0;
     width: 100vw;
     position: relative;
     overflow: hidden;
@@ -877,6 +916,17 @@ footer {
         border-radius: 0.5em;
     }
 }
+
+.case-study-header-img {
+    width: 85%;
+    margin: auto;
+    border-radius: 0.5em;
+    bottom: 0%;
+    img {
+        width: 100%;
+    }
+}
+
 
 #sismo-header {
     background: var(--Gradient, linear-gradient(286deg, #193970 -75.26%, #12203D 72.97%));
@@ -943,8 +993,8 @@ footer {
 .case-study-content {
     display: grid;
     align-items: start;
-    gap: 0.5em;
-    
+    gap: 1.5em;
+
     ul  {
         display: grid;
         gap: 1em;
@@ -973,14 +1023,22 @@ footer {
         color: $white;
     }
 
+    p {
+        line-height: 170%;
+    }
+
 }
 
 
 .case-study-page {
+    display: grid;
+    gap: 5em;
     width: 70vw;
     border-left: 1px $dark-gray solid;
     border-right: 1px $dark-gray solid;
     margin: 0 15vw 0 15vw;
+    padding-top: 5em; padding-bottom: 5em;
+
     img {
         width: 100%;
         border-radius: 0.5em;
@@ -1007,10 +1065,6 @@ footer {
         gap: .25em;
         margin: auto 0 auto 0;
     }
-}
-
-#overview {
-    padding-top: 15vh;
 }
 
 #disclaimer {
@@ -1069,10 +1123,12 @@ footer {
     border-radius: 0.5em;
     border: 0.25vh $orange solid;
     box-shadow: 0px 0px 0px $orange;
-    transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
+    transition: box-shadow 0.5s ease-in -0.05s, border-width 0.5s ease-in, filter 0.5s ease-in;
+    filter: saturate(0);
     &:hover {
         box-shadow: 0px 0px 18px 2px $orange;
         border-width: 0;
+        filter: saturate(1);
     }
 }
 
