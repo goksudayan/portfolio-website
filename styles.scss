@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$black: rgba(26, 26, 26, 1);
+$black: #1a1a1a;
 $dark-gray: color.scale($black, $lightness: 5%);
 $mid-gray: color.scale($black, $lightness: 50%);
 $light-gray: color.scale($black, $lightness: 90%);
@@ -58,6 +58,9 @@ body {
     overflow-x: hidden;
     //cursor: none;
 }
+
+
+
 
 .custom-cursor {
     position: fixed;
@@ -354,13 +357,7 @@ table {
     }
 }
 
-nav a {
-    color: $mid-gray;
-    text-decoration: none;
-    border: none;
-}
-
-p a {
+p a, li a {
     border-bottom: .03em $mid-gray solid;
     transition: border-bottom-color 0.5s ease-in;
     &:hover {
@@ -374,17 +371,21 @@ ul {
     gap:0.5em;
 }
 
+nav a {
+    color: $mid-gray;
+    text-decoration: none;
+    border: none;
+}
+
 .circle-li {
+    position: absolute;
     display: grid;
     justify-content: center;
     align-items: center;
-    min-width: 2em;
-    min-height: 2em;
-    max-width: 2em;
-    max-height: 2em;
-    border: 1px $mid-gray solid;
-    font-size: 1em;
+    font-size: 4em;
     border-radius: 50%;
+    opacity: 0.1;
+    top: -70%;
 }
 
 #navbar {
@@ -709,34 +710,50 @@ footer {
 
     a {
         color: $black;
+        border-bottom: none;
     }
 }
 
 #gradient-bg {
     position: fixed;
-    width: 100%;
+    width: 130%;
     height: 100vh;
-    top: 0%; right: 0%; bottom: 0%; left: 0%;
+    top: 0%; right: 30%; bottom: 0%; left: 0%;
     background: linear-gradient(to right, rgba($black, 1), rgba($black, 0));
     z-index: -1;
 }
 
-#moving-bg-outside {
+.moving-bg-outside {
     width: 100%;
     height: 100%;
     right: 0;
     position: fixed;
-    overflow-y: hidden;
-    z-index: -1;   
+    overflow: hidden;
+    z-index: -1;
+    &.katch-bg-outside {
+        z-index: 0;
+        height: 140vh;
+        //background-color: color.scale($katch-color, $lightness: -60%);
+        overflow: hidden;
+    }
 }
 
-#moving-bg-inside {
+.moving-bg-inside {
     top: 0;
     right: 0;
-    left: 50;
+    left: 0;
     position: absolute;
     width: 100%;
     height: 50000vh;
+    background-size: auto;
+    background-repeat: repeat;
+    overflow: hidden;
+    &.index-bg {
+        background-image: url('../assets/bg-plus.svg');
+    }
+    &.katch-bg-inside {
+        background-image: url('../assets/bg-cross.svg');
+    }
 }
 
 .details {
@@ -842,21 +859,23 @@ footer {
 
 .case-study-header {
     position: relative;
-    padding-top: 20vh;
     display: grid;
-    gap: 4em;
+    gap: 0em;
     height: 140vh;
     overflow: hidden;
 }
 
 #katch-header {
+    position: relative;
+    z-index: 1;
     background-color: color.scale($katch-color, $lightness: -60%);
-
+    background-image: url('../assets/bg-cross.svg')
     //background: linear-gradient(to bottom, color.scale($katch-color, $lightness: -50%), $black);
 
 }
 
 .case-study-header-info {
+    padding-top: 20vh;
     display: grid;
     gap: 1.5em;
     height: min-content;
@@ -997,15 +1016,19 @@ footer {
 
     ul  {
         display: grid;
-        gap: 1em;
+        gap: 0.5em;
         align-items: center;
         color: $mid-gray;
+        list-style: disc;
         li {
             display: flex;
-            gap: .5em;
             justify-content: start;
             align-items: center;
             line-height: 150%;
+            position: relative;
+        }
+        li .no-dec {
+            list-style: none;
         }
     }
     a {
@@ -1038,6 +1061,7 @@ footer {
     border-right: 1px $dark-gray solid;
     margin: 0 15vw 0 15vw;
     padding-top: 5em; padding-bottom: 5em;
+    background-color: $black;
 
     img {
         width: 100%;
@@ -1062,8 +1086,11 @@ footer {
     
     .feature-description {
         display: grid;
-        gap: .25em;
+        gap: .5em;
         margin: auto 0 auto 0;
+        & > h3 {
+            color: $white;
+        }
     }
 }
 
@@ -1132,7 +1159,11 @@ footer {
     }
 }
 
+.contact {
+    border-bottom: none;
+    border-top: 1px $dark-gray solid;
 
+}
 
 @keyframes moveBackground {
     0% {
@@ -1151,7 +1182,7 @@ footer {
     100% {opacity: 100%; transform: translateY(0em);}
 }
 
-#moving-bg-inside {
+.moving-bg-inside {
     animation: moveBackground 100s linear infinite;
 }
 

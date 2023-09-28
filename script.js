@@ -1,33 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // For secondary case study cards, get img height: 
-    /*
-    const tidbitsImg = document.getElementById('tidbits-img');
-    tidbitsImg.addEventListener('load', () => {
-        const tidbitsImgHeight = tidbitsImg.scrollHeight;
-        
-        const tidbitsStyle = document.createElement('style');
-        tidbitsStyle.textContent = `
-            #tidbits:hover img {
-                transform: translateY(calc(-${tidbitsImgHeight}px + 50vh));
-            }
-        `;
-        document.head.appendChild(tidbitsStyle);
-    });
-
-    const sismoImg = document.getElementById('sismo-img');
-    sismoImg.addEventListener('load', () => {
-        const sismoImgHeight = sismoImg.scrollHeight;
-    
-        const sismoStyle = document.createElement('style');
-        sismoStyle.textContent = `
-            #sismo:hover img {
-                transform: translateY(calc(-${sismoImgHeight}px + 50vh));
-            }
-        `;
-        document.head.appendChild(sismoStyle);
-    });
-    */
     // Navigation hide/show
 
     let lastScrollPosition = 0;
@@ -81,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Background
 
+
+    /*
     const hero = document.getElementById('hero-section');
     const work = document.getElementById('work');
     const about = document.getElementById('about');
@@ -141,7 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((div) => {
         observer.observe(div);
     });
-    
+    */    
+
     // Custom cursor
 
     const cursorElements = document.querySelectorAll('.with-cursor');
