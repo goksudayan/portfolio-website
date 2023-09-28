@@ -13,7 +13,7 @@ $font-stack: "myriad-pro", sans-serif;
 $base-font-size: 24px;
 
 $katch-color: rgba(58, 104, 143, 1);
-$sismo-color: rgb(19, 32, 62);
+$sismo-color: #13203e;
 $sismo-border-color: rgba(125,134,191,1);
 $tomo-color: #2f5966;
 $focusmate-color: #3C4087;
@@ -122,14 +122,16 @@ h1, h2, h3 {
 }
 
 blockquote {
-    border-left: .1em $mid-gray solid;
+    border-left: .1em $orange solid;
     margin-top: .5em;
     padding: calc($desktop-padding / 4) 0 calc($desktop-padding / 4) calc($desktop-padding / 2);
-    color: $mid-gray;
+    color: $orange;
+    line-height: 200%;
     footer {
         padding-top: 1.5em;
         background-color: transparent;
-        color: $white;
+        color: $orange;
+        font-style: italic;
     }
 }
 
@@ -330,13 +332,17 @@ a {
 }
 
 table {
+    display: flex;
+    gap: 5em;
     color: $mid-gray;
     th {
         text-align: left;
+        line-height: 150%;
     }
 
     td {
-
+        text-align: left;
+        line-height: 150%;
     }
 }
 
@@ -366,26 +372,27 @@ p a, li a {
 }
 
 ul {
-    list-style: none;
     display: grid;
     gap:0.5em;
+    align-items: center;
+    color: $mid-gray;
+    li {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        line-height: 150%;
+        position: relative;
+        list-style: decimal;
+    }
+    li .no-dec {
+        list-style: none;
+    }
 }
 
 nav a {
     color: $mid-gray;
     text-decoration: none;
     border: none;
-}
-
-.circle-li {
-    position: absolute;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    border-radius: 50%;
-    opacity: 0.1;
-    top: -70%;
 }
 
 #navbar {
@@ -871,8 +878,9 @@ footer {
     background-color: color.scale($katch-color, $lightness: -60%);
     background-image: url('../assets/bg-cross.svg')
     //background: linear-gradient(to bottom, color.scale($katch-color, $lightness: -50%), $black);
-
 }
+
+
 
 .case-study-header-info {
     padding-top: 20vh;
@@ -937,8 +945,11 @@ footer {
 }
 
 .case-study-header-img {
-    width: 85%;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 85%;
+    height: auto;
+    margin-left: auto; margin-right: auto;
     border-radius: 0.5em;
     bottom: 0%;
     img {
@@ -948,60 +959,81 @@ footer {
 
 
 #sismo-header {
-    background: var(--Gradient, linear-gradient(286deg, #193970 -75.26%, #12203D 72.97%));
+    position: relative;
+    z-index: 1;
+    background-color: color.scale($sismo-color, $lightness: -60%);
+    background-image: url('../assets/bg-square.svg');
 }
 
 #sismo-header-img {
+    position: relative;
+    top: 15%;
     border-color: $sismo-border-color;
     box-shadow: 0px 0px 18px 2px $sismo-border-color;
 }
 
 #tomo-header {
-    background-color: #1D3239;
+    position: relative;
+    z-index: 1;
+    background-color: color.scale($tomo-color, $lightness: -60%);
+    background-image: url('../assets/bg-square.svg');
 }
 
 #tomo-header-img {
     position: relative;
-    min-width: 100vw;
-    top: 0;
-    right: 0;
-    object-fit: contain;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
+    max-width: 30vw;
+    top: 15%;
+    border-color: $tomo-color;
 }
 
 #focusmate-header {
-    background-color: $focusmate-color;
+    position: relative;
+    z-index: 1;
+    background-color: color.scale($focusmate-color, $lightness: -60%);
+    background-image: url('../assets/bg-square.svg');
 }
 
 #focusmate-header-img {
+    position: relative;
+    top: 15%;
     border-color: $focusmate-color;
     box-shadow: 0px 0px 18px 2px $focusmate-color;
 }
 
 #paro-header {
-    background-color: $paro-color;
-    min-width: 100vw;
+    position: relative;
+    z-index: 1;
+    background-color: color.scale($paro-color, $lightness: -80%);
+    background-image: url('../assets/bg-square.svg');
 }
 
 #paro-header-img {
+    position: relative;
+    top: 5%;
     border-color: $paro-color;
     box-shadow: 0px 0px 18px 2px $paro-color;
-    position: relative;
-    min-width: 70vw;
-    top: 270%;
-    object-fit: contain;
-    border-radius: 0.5em;
 }
 
 #vidbib-header {
-    background-color: $vidbib-color;
+    position: relative;
+    z-index: 1;
+    background-color: color.scale($vidbib-color, $lightness: -90%);
+    background-image: url('../assets/bg-square.svg');
 }
 
 #vidbib-header-img {
+    position: relative;
+    top: 15%;
     border-color: $vidbib-color;
     box-shadow: 0px 0px 18px 2px $vidbib-color;
+}
+
+#nyala-header {
+    position: relative;
+    z-index: 1;
+    background-color: $dark-gray;
+    background-image: url('../assets/bg-square.svg');
+    height: 100vh;
 }
 
 .emp-text {
@@ -1014,23 +1046,7 @@ footer {
     align-items: start;
     gap: 1.5em;
 
-    ul  {
-        display: grid;
-        gap: 0.5em;
-        align-items: center;
-        color: $mid-gray;
-        list-style: disc;
-        li {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            line-height: 150%;
-            position: relative;
-        }
-        li .no-dec {
-            list-style: none;
-        }
-    }
+    
     a {
         font-weight: 500;
         &::after {
