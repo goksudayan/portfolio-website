@@ -1061,6 +1061,16 @@ footer {
     //width: fit-content;
 }
 
+#hero-span {
+    color: $orange;
+}
+
+#hero-img {
+    height: calc($font-size * 1.5);
+    width: auto;
+    background-color: red;
+}
+
 .case-study-content {
     display: grid;
     align-items: start;
@@ -1269,8 +1279,14 @@ footer {
         font-size: 4rem;
         #emp {
             font-size: 5rem;
+            &::after {
+                content: none;
+            }
         }
+
     }
+
+
 
     .case-study-div {
         grid-template-columns: repeat(1, 1fr);
@@ -1342,11 +1358,7 @@ footer {
         width: 100%;
     }
 
-    #emp{
-        &::after {
-            content: none;
-        }
-    }
+
 
     #previous-experiences {
         display: grid;
