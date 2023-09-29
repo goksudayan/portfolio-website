@@ -57,6 +57,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     //cursor: none;
+    margin: auto;
 }
 
 
@@ -143,7 +144,7 @@ blockquote {
 }
 
 #hero-description {
-    width: 55%;
+    width: 80%;
 }
 
 h1, h2, h3, p, i, img {
@@ -283,8 +284,6 @@ h3, p {
     padding: 0;
     img {
         position: relative;
-        top: 200%;
-        height: 500%;
         object-fit: cover;
         transition: transform 4.5s ease-in;
     }
@@ -460,12 +459,13 @@ nav a {
 section, .section, main {
     position: relative;
     display: grid;
-    padding: calc($desktop-padding/2) $desktop-padding calc($desktop-padding/2) $desktop-padding;
+    padding: $desktop-padding;
     gap: 2.5em;
     background: rgba($black, 0) center/cover;
     backdrop-filter: blur(3px);
     border-bottom: 1px $dark-gray solid;
     z-index: 1;
+    width: 100%;
 }
 
 #hero-section {
@@ -572,12 +572,6 @@ a {
 
 .br-div {
     height: 1em;
-}
-
-#about {
-    #hand-wave {
-        font-size: calc($base-font-size*$typo-scale);
-    }
 }
 
 #blog {
@@ -725,9 +719,9 @@ footer {
 
 #gradient-bg {
     position: fixed;
-    width: 130%;
+    width: 130vw;
     height: 100vh;
-    top: 0%; right: 30%; bottom: 0%; left: 0%;
+    top: 0%; right: 30vw; bottom: 0%; left: 0%;
     background: linear-gradient(to right, rgba($black, 1), rgba($black, 0));
     z-index: -1;
 }
@@ -836,16 +830,19 @@ footer {
 .services-grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
     gap: 2.5em;
 }
 
 .service-card {
+    flex: 0 0 calc(33.33% - 2.5em);
     display: grid;
     gap: 1em;
     padding: calc(#{$desktop-padding} / 2);
     background-color: rgba($dark-gray,0.3);
     border-radius: .5em;
-    width: 30%;
+    //height: 100%;
     justify-content: space-between;
     border: 1px color.scale($dark-gray, $lightness: 10%) solid;
     transition: box-shadow 0.3s ease-in -0.05s, border-color 0.3s ease-in, background-color 0.3s ease-in;
@@ -912,6 +909,8 @@ footer {
     }
 }
 
+
+
 #katch-head-section-img {
     display: flex;
     justify-content: center;
@@ -965,7 +964,9 @@ footer {
     border-radius: 0.5em;
     bottom: 0%;
     img {
+        position: relative;
         width: 100%;
+        height: fit-content;
     }
 }
 
@@ -979,7 +980,7 @@ footer {
 
 #sismo-header-img {
     position: relative;
-    top: 15%;
+    top: 60%;
     border-color: $sismo-border-color;
     border-radius: 0.5em;
     box-shadow: 0px 0px 18px 2px $sismo-border-color;
@@ -1050,6 +1051,9 @@ footer {
     background-color: $dark-gray;
     background-image: url('../assets/bg-square.svg');
     height: 100vh;
+    > .case-study-header-info {
+        padding-top: 0;
+    }
 }
 
 .emp-text {
@@ -1151,7 +1155,8 @@ footer {
 #previous-experiences {
     display: grid;
     gap: 1em;
-    
+    height: auto;
+
     a::after {
         content: none;
     }
@@ -1159,7 +1164,7 @@ footer {
 
 
 .exp-img {
-    padding: 7.5vh;
+    padding: 7.5%;
     background: $dark-gray;
     display: grid;
     justify-content: center;
@@ -1167,11 +1172,17 @@ footer {
     border-radius: 0.5em;
     transition: padding 0.5s ease-in;
     border: 1px color.scale($dark-gray, $lightness: 10%) solid;
+    width: 100%;
+    height: 30vh;
     img {
+        position: relative;
         transition: filter 0.5s ease-in;
-        height: 15vh;
-        width: auto;
+        object-fit: contain;
+        width: 100%;
         filter: saturate(0);
+    }
+    #logo-katch {
+        height: 15vh;
     }
     &:hover {
         img {
@@ -1231,37 +1242,26 @@ footer {
     100% {transform: rotate(-360deg)}
 }
 
-@media screen and (min-width: 481px) and (max-width: 900px) {
+@media screen and (min-width: 1301px) {
+    #hero-description {
+        width: 55%;
+    }
+}
+
+
+@media screen and (max-width: 1300px) { 
+   
     * {
         $base-font-size: 16px;
         $typo-scale: 1.5;
-        margin: 1.5% 2.5% 1.5% 2.5%;
-    }
-
-    body {
-        margin: auto;
-    }
-    #navbar {
-        visibility: hidden;
-    }
-    #hero-headline {
-        line-height: 100%;
-    }
-
-    #hero-description {
-        width: 100%;
     }
 
     div {
         max-width: 100%;
     }
 
-    .case-study-div {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .case-study-card {
-        height: 50vh;
+    #hero-section {
+        max-height: 80vh;
     }
 
     #hero-headline {
@@ -1272,15 +1272,36 @@ footer {
         }
     }
 
+    .case-study-div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .case-study-card {
+        img {
+            position: relative;
+            top: 0;
+        }
+    }
+
+    #navbar {
+        visibility: hidden;
+    }
+
     #about-content {
         display: grid;
+        height: min-content;
+        padding-bottom: 10%;
         #about-left, #about-right {
             width: 100%;
         }
     }
 
+    .services-grid {
+        gap: 1em;
+    }
+
     .service-card {
-        width: 45%;
+        flex: 0 0 calc(50% - 2.5em);
     }
 
     .archived-card {
@@ -1288,11 +1309,11 @@ footer {
     }
 
     #katch-header {
-        height: 80vh;   
+        height: 100vh;   
     }
 
     .case-study-header {
-        height: 80vh;
+        height: 100vh;
     }
 
     .case-study-header-info {
@@ -1303,10 +1324,79 @@ footer {
         width: 90vw;
         margin: auto;
     }
-}
 
+    
+    #previous-experiences {
+        display: flex;
+        gap: 1em;
+        height: fit-content;
+        > a {
+            width: 45vw;
+        }
+    }
+}
 
 @media screen and (max-width: 480px) {
+
+    #hero-description {
+        width: 100%;
+    }
+
+    #emp{
+        &::after {
+            content: none;
+        }
+    }
+
+    #previous-experiences {
+        display: grid;
+        padding-bottom: 10vh;
+        > a {
+            width: 100%;
+        }
+    }
+
+    .case-study-card {
+        height: 40vh;
+    }
+
+    .service-card {
+        flex: 0 0 calc(100%);
+    }
+
+    .case-study-header {
+        height: 70vh;
+    }
+
+    .case-study-header-info {
+        padding-top: 5%;
+        width: 75%;
+    }
+
+    #katch-head-section-img {
+        :nth-child(1), :nth-child(3) {
+            width: 0%;
+        }
+        :nth-child(2) {
+            max-width: 80%;
+        }
+    }
+
+    .feature-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #tomo-header-img {
+        max-width: 70vw;
+        top: 15%;
+    }
+
+    #focusmate-header-img {
+        top: 50%;
+    }
     
+
+
 }
+
 
