@@ -167,17 +167,17 @@ h3, p {
     position: relative;
     justify-content: flex-end;
     align-items: flex-end;
+    height: 100%;
+    max-width: 100%;
     border-radius: .5em;
     border-width: .25vh; border-style: solid;
-    height: 43.1vh;
-    max-height: 43.1vh;
     overflow: hidden;
 
     img {
         position: relative;
         bottom: 0;
         margin-top: auto;
-        width: 100%;
+        max-width: 100%;
         max-height: 100%;
         object-fit: cover;
         align-self: center;
@@ -198,7 +198,6 @@ h3, p {
     padding: 0 5%;
 
     img {
-        bottom: -15%;
         object-fit: contain;
     }
 
@@ -333,9 +332,9 @@ table {
     td {
         text-align: left;
         line-height: 150%;
-        width: min-content;
     }
 }
+
 
 #hero-headline {
     font-family: "Cormorant", serif;
@@ -1123,7 +1122,6 @@ footer {
 #previous-experiences {
     display: grid;
     gap: 1em;
-    height: auto;
 
     a::after {
         content: none;
@@ -1207,6 +1205,17 @@ footer {
     100% {transform: rotate(-360deg)}
 }
 
+.desktop {
+    display: grid;
+    display: -moz-grid;
+}
+
+.mobile {
+    display: none;
+}
+
+// Responsiveness settings
+
 @media screen and (min-width: 1301px) {
     #hero-description {
         width: 55%;
@@ -1214,10 +1223,15 @@ footer {
 
     .desktop {
         display: grid;
+        display: -moz-grid;
     }
 
     .mobile {
         display: none;
+    }
+
+    .case-study-header {
+        height: 140vh;
     }
 }
 
@@ -1246,7 +1260,6 @@ footer {
                 content: none;
             }
         }
-
     }
 
     .case-study-div {
@@ -1254,8 +1267,6 @@ footer {
     }
 
     .case-study-card {
-        height: 60vh;
-        max-height: 60vh;
         img {
             object-fit: cover;
         }
@@ -1298,11 +1309,10 @@ footer {
         width: 90vw;
         margin: auto;
     }
-
     
     #previous-experiences {
         display: flex;
-        gap: 1em;
+        gap: 1.5em;
         height: fit-content;
         > a {
             width: 45vw;
@@ -1318,6 +1328,7 @@ footer {
 
     .mobile {
         display: grid;
+        display: -moz-grid;
     }
 
     #hero-description {
@@ -1325,8 +1336,6 @@ footer {
     }
 
     .case-study-card {
-        height: 28vh;
-        max-height: 28vh;
     }
 
     #previous-experiences {
