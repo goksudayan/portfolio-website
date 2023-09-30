@@ -5,7 +5,7 @@ $dark-gray: color.scale($black, $lightness: 5%);
 $mid-gray: color.scale($black, $lightness: 50%);
 $light-gray: color.scale($black, $lightness: 90%);
 $white: rgba(230, 230, 230, 1);
-$orange: #f2a60d;
+$orange: rgb(242, 166, 13);
 
 $desktop-padding: 5vw;
 $typo-scale: 1.5;
@@ -403,7 +403,7 @@ nav a {
     //backdrop-filter: blur(3px);
     //cursor: none;
     border: 0px $dark-gray solid;
-    border-radius: 1.5rem;
+    border-radius: .5rem;
     top: 1.5%;
     left: 1.5%;
     padding: 1.5%;
@@ -1063,12 +1063,6 @@ footer {
 
 #hero-span {
     color: $orange;
-}
-
-#hero-img {
-    height: calc($font-size * 1.5);
-    width: auto;
-    background-color: red;
 }
 
 .case-study-content {

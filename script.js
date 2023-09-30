@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Custom cursor
 
+    /*
     const cursorElements = document.querySelectorAll('.with-cursor');
     const customCursor = document.createElement('div');
     customCursor.classList.add('custom-cursor');
@@ -150,11 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (element.classList.contains('case-study-card') || element.classList.contains('archived-study')) {
                 updateCursorContent('View');
             }
-            /*
+
             else if (element.classList.contains('nav-item') && !navbar.classList.contains('hidden')) {
                 updateCursorContent('Go');
             }
-            */
+
             else if (element.classList.contains('blog-post')) {
                 updateCursorContent('Read');
             }
@@ -167,7 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     });
-
+    
+    */
     // to-top container hidden/visible
 
     const toTopContainer = document.getElementById('to-top-container');
