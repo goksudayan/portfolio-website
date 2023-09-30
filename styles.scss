@@ -1221,6 +1221,7 @@ footer {
 // Responsiveness settings
 
 @media screen and (min-width: 1301px) {
+    
     #hero-description {
         width: 55%;
     }
@@ -1250,6 +1251,7 @@ footer {
     div {
         max-width: 100%;
     }
+
 
     #hero-section {
         max-height: 80vh;
@@ -1302,7 +1304,7 @@ footer {
     }
 
     .case-study-header {
-        height: 100vh;
+        max-height: 100vh;
     }
 
     .case-study-header-info {
@@ -1329,7 +1331,7 @@ footer {
     .desktop {
         display: none;
     }
-
+    
     .mobile {
         display: grid;
         display: -moz-grid;
