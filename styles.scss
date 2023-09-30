@@ -1094,7 +1094,7 @@ footer {
     
     .feature-description {
         display: grid;
-        gap: .5em;
+        gap: 1em;
         margin: auto 0 auto 0;
         & > h3 {
             color: $white;
@@ -1125,7 +1125,6 @@ footer {
 
 #previous-experiences {
     display: grid;
-    gap: 1em;
 
     a::after {
         content: none;
@@ -1320,6 +1319,7 @@ footer {
         display: flex;
         gap: 1.5em;
         height: fit-content;
+        
         > a {
             width: 45vw;
         }
