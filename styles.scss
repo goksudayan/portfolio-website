@@ -88,6 +88,7 @@ body {
     color: $orange;
     background-color: rgba($black, 0.5);
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 h1 {
@@ -452,6 +453,7 @@ section, .section, main {
     gap: 2.5em;
     background: rgba($black, 0) center/cover;
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     border-bottom: 1px $dark-gray solid;
     z-index: 1;
     width: 100%;
@@ -465,6 +467,7 @@ section, .section, main {
     display: flex;
     overflow: hidden;
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     z-index: 3;
 }
 
@@ -472,6 +475,7 @@ main {
     align-content: center;
     background: rgba($black, 0) center/cover;
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .v-content {
