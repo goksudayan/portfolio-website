@@ -164,6 +164,7 @@ h3, p {
 
 .case-study-card {
     display: flex;
+    position: relative;
     justify-content: flex-end;
     align-items: flex-end;
     border-radius: .5em;
@@ -194,10 +195,11 @@ h3, p {
     box-shadow: 0px 0px 0px $katch-color;
     border-color: rgba(82,136,178,0.5); 
     background-color: color.scale($katch-color, $lightness: -50%);
+    padding: 0 5%;
 
     img {
         bottom: -15%;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     transition: box-shadow 0.3s ease-in -0.05s, border-width 0.3s ease-in;
@@ -1200,6 +1202,14 @@ footer {
     #hero-description {
         width: 55%;
     }
+
+    .desktop {
+        display: grid;
+    }
+
+    .mobile {
+        display: none;
+    }
 }
 
 
@@ -1230,14 +1240,20 @@ footer {
 
     }
 
-
-
     .case-study-div {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    #navbar {
-        visibility: hidden;
+    .case-study-card {
+        height: 60vh;
+        max-height: 60vh;
+        img {
+            object-fit: cover;
+        }
+    }
+
+    #katch {
+        padding: 0 5%;
     }
 
     #about-content {
@@ -1259,10 +1275,6 @@ footer {
 
     .archived-card {
         display: grid;
-    }
-
-    #katch-header {
-        height: 100vh;   
     }
 
     .case-study-header {
@@ -1291,11 +1303,22 @@ footer {
 
 @media screen and (max-width: 480px) {
 
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: grid;
+    }
+
     #hero-description {
         width: 100%;
     }
 
-
+    .case-study-card {
+        height: 28vh;
+        max-height: 28vh;
+    }
 
     #previous-experiences {
         display: grid;
@@ -1309,22 +1332,13 @@ footer {
         flex: 0 0 calc(100%);
     }
 
-    .case-study-header {
-        height: 70vh;
-    }
-
     .case-study-header-info {
         padding-top: 5%;
         width: 75%;
     }
 
-    #katch-head-section-img {
-        :nth-child(1), :nth-child(3) {
-            width: 0%;
-        }
-        :nth-child(2) {
-            max-width: 80%;
-        }
+    #sismo-header-img {
+        bottom: -40%;
     }
 
     .feature-section {
@@ -1332,11 +1346,11 @@ footer {
     }
 
     #tomo-header-img {
-        max-width: 70vw;
+        //max-width: 70vw;
         top: 15%;
     }
 
-    #focusmate-header-img {
+    #focusmate-header-img, #paro-header-img, #vidbib-header-img {
         top: 50%;
     }
     

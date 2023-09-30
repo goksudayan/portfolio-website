@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         lastScrollPosition = scrollY;
     });
+    
 
     // Navigation hover interactions
 
