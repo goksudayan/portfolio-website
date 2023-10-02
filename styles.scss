@@ -400,9 +400,10 @@ nav a {
     z-index: 4;
     gap: 0.5em;
     opacity: 1;
-    transition: opacity .75s ease-in-out;
+    transition: opacity .75s ease-in;
     transition-delay: .25s;
     letter-spacing: 0;
+    pointer-events: auto;
     
     .links {
         display: grid;
@@ -437,6 +438,7 @@ nav a {
 #navbar.hidden {
     opacity: 0;
     letter-spacing: 0.05em;
+    pointer-events: none;
 }
 
 .section-divider {
@@ -1125,6 +1127,7 @@ footer {
 
 #previous-experiences {
     display: grid;
+    gap: 1em;
 
     a::after {
         content: none;
@@ -1251,9 +1254,10 @@ footer {
         max-width: 100%;
     }
 
-
     #hero-section {
-        max-height: 80vh;
+        padding-top: 5vh;
+        height: none;
+        max-height: none;
     }
 
     #hero-headline {
@@ -1335,6 +1339,12 @@ footer {
     .mobile {
         display: grid;
         display: -moz-grid;
+    }
+
+    #hero-section {
+        padding-top: 5vh;
+        min-height: none;
+        max-height: none;
     }
 
     #hero-description {
