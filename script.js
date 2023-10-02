@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
-        const scrollThreshold = 100;
+        const scrollThreshold = 300;
 
         if (scrollY > lastScrollPosition) {
             if (scrollY > scrollThreshold) {
@@ -51,9 +51,28 @@ document.addEventListener('DOMContentLoaded', () => {
         brandName.style.letterSpacing = "0.025em";
         brandName.style.transform = 'none';
     })
+    
+    // To-top container hidden/visible
+
+    const toTopContainer = document.getElementById('to-top-container');
+
+    function toggleToTopVisibility() {
+        const scrollY = window.scrollY;
+        const scrollThreshold = 100;
+
+        if (scrollY >= scrollThreshold) {
+          toTopContainer.style.display = 'block';
+        } else {
+          toTopContainer.style.display = 'none';
+        }
+      }
+    
+      toggleToTopVisibility();
+    
+      window.addEventListener('scroll', toggleToTopVisibility);
+
 
     // Background
-
 
     /*
     const hero = document.getElementById('hero-section');
@@ -119,12 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
     */    
 
     // Custom cursor
-
     /*
+    
     const cursorElements = document.querySelectorAll('.with-cursor');
     const customCursor = document.createElement('div');
     customCursor.classList.add('custom-cursor');
-    document.body.appendChild(customCursor);
+    document.body.appendChild(customCursor);   
 
     let cursorX = 0;
     let cursorY = 0;
@@ -169,25 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     });
-    
     */
-    // to-top container hidden/visible
 
-    const toTopContainer = document.getElementById('to-top-container');
-
-    function toggleToTopVisibility() {
-        const scrollY = window.scrollY;
-        const scrollThreshold = 140;
-
-        if (scrollY >= scrollThreshold) {
-          toTopContainer.style.display = 'block';
-        } else {
-          toTopContainer.style.display = 'none';
-        }
-      }
     
-      toggleToTopVisibility();
     
-      window.addEventListener('scroll', toggleToTopVisibility);
 
 });
